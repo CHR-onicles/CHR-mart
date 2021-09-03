@@ -1,9 +1,12 @@
-/**
- * Basic typography style for copy text
- */
+//---------------------------
+//Typography styles
+//---------------------------
+@use './colors' as *; 
+
 body {
   line-height: 1.5;
-  color: black;
+  color: $clr-black;
+  font-family: 'Rubik', sans-serif;
 }
 
 h1, h2{

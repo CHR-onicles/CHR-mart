@@ -1,9 +1,14 @@
 // -----------------------------------------------------------------------------
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
+@use './colors' as *;
 
 html {
   scroll-behavior: smooth;
+}
+
+body{
+  background: $clr-bg-light;
 }
 
 *,

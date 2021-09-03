@@ -1,5 +1,13 @@
+:root {
+  --max-width: 1180px;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  background: #f3f5f6;
 }
 
 *,
@@ -20,7 +28,8 @@ img, iframe {
 
 .container {
   width: 90%;
-  max-width: 1180px;
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 .row {
@@ -94,12 +103,10 @@ img, iframe {
   transform: translate(0) rotate(0) skew(0);
 }
 
-/**
- * Basic typography style for copy text
- */
 body {
   line-height: 1.5;
-  color: black;
+  color: rgba(0, 0, 0, 0.8);
+  font-family: "Rubik", sans-serif;
 }
 
 h1, h2 {
@@ -115,7 +122,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 15px;
+  width: rem(15);
 }
 
 ::-webkit-scrollbar-thumb {

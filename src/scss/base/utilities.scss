@@ -5,7 +5,8 @@
 
 .container {
     width: 90%;
-    max-width: $max-width;
+    max-width: var(--max-width);
+    margin: 0 auto;
 }
 
 .row {

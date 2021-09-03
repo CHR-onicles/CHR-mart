@@ -1,9 +1,11 @@
+@use '../abstracts/functions';
+
 body{
     overflow: overlay; // for scroll bar as overlay
 }
 
 ::-webkit-scrollbar {
-    width: 15px;
+    width: rem(15);
 }
 
 ::-webkit-scrollbar-thumb {

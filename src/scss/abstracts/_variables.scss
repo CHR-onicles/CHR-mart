@@ -2,22 +2,17 @@
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
 
-
-
-/// Container's maximum width
-$max-width: 1180px;
-
-
+:root{
+  --max-width: 1180px; // for container
+}
 
 
 
-/// Breakpoints map
-/// @prop {String} keys - Keys are identifiers mapped to a given length
-/// @prop {Map} values - Values are actual breakpoints expressed in pixels
-$breakpoints: (
-  'small': 320px,
-  'medium': 768px,
-  'large': 1024px,
-) !default;
-
-$red: #f00;
+// Breakpoints map
+$breakpoints-up: (
+  'small': 20em,  // 320px
+  'medium': 48em,  // 768px
+  'large': 62em,  // 992px
+  'xlarge': 90em, // 1440px
+  'very_large': 160em // 2560px
+);
