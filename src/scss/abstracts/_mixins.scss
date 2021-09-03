@@ -1,0 +1,17 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+
+// Ultimate centering of children elements
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Setup for pseudo elements
+@mixin pseudo {
+  content: "";
+  position: absolute;
+}

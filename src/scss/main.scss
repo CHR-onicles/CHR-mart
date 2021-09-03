@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+// 1. Configuration and helpers
+@use './abstracts/variables' as *;
+@use './abstracts/functions' as *;
+@use  './abstracts/mixins' as *;
+
+// 2. Base stuff
+@use './base' as *;
+
+// 3. Layout-related sections
+@use'./layout' as *;
+
+// 4. Components
+@use './components' as *;

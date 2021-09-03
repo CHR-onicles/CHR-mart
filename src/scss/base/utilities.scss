@@ -1,0 +1,86 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+@use '../abstracts/variables' as *;
+
+.container {
+    width: 90%;
+    max-width: $max-width;
+}
+
+.row {
+    display: flex;
+}
+
+//-------------------------
+// Transitions
+// ------------------------
+.fade-in {
+    opacity: 0;
+}
+
+.fade-in-left-1 {
+    opacity: 0;
+    transform: perspective(500px) translate3d(-55%, 100%, -300px) rotateX(160deg);
+    transition: 1s cubic-bezier(0, 0.85, 0.74, 1);
+}
+
+.fade-in-left-2 {
+    opacity: 0;
+    transform: skew(15deg) translateX(-20%);
+    transition: 1s cubic-bezier(0, 0.85, 0.74, 1);
+}
+
+.fade-in-left-3 {
+    opacity: 0;
+    transform: translate(-10%, -25%) rotateZ(15deg);
+    transform-origin: top right;
+    transition: 1s cubic-bezier(0, 0.85, 0.74, 1);
+}
+
+.fade-in-right-1 {
+    opacity: 0;
+    transform: translate(35%, -70%) rotateX(45deg) rotateY(180deg);
+    transition: 1s cubic-bezier(0, 0.85, 0.74, 1);
+}
+
+.fade-in-right-2 {
+    opacity: 0;
+    transform: skew(-15deg) translateX(20%);
+    transition: 1s ease-out;
+}
+
+.fade-in-right-3 {
+    opacity: 0;
+    transform: translate(10%, 25%) rotateZ(-15deg);
+    transform-origin: bottom left;
+    transition: 1s cubic-bezier(0, 0.85, 0.74, 1);
+}
+
+.fade-in-bottom {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1s cubic-bezier(0, 0.85, 0.74, 1);
+}
+
+.fade-in-flat-bottom {
+    opacity: 0;
+    transition: 1s cubic-bezier(0, 0.85, 0.74, 1);
+    transform: perspective(500px) rotateX(90deg);
+    transform-origin: bottom;
+}
+
+.fade-in-flat-top {
+    opacity: 0;
+    transform: perspective(500px) rotateX(90deg);
+    transform-origin: top;
+    transition: 1s ease-out;
+}
+
+.appear {
+    opacity: 1;
+    transform: translate(0) rotate(0) skew(0);
+}
+//-------------------------
+// End  Transitions
+// ------------------------
