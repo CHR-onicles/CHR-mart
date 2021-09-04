@@ -31,18 +31,21 @@
 
 // Mixin for absolute vertical centering
 @mixin top-50 {
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
 
 // Mixin for absolute horizontal centering
 @mixin left-50 {
+  position: absolute;
   top: 50%;
   transform: translateX(-50%);
 }
 
 // Mixin for both horizontal and vertical absolute centering
 @mixin top-left-50 {
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
