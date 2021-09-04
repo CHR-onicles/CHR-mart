@@ -3,11 +3,17 @@
 // -----------------------------------------------------------------------------
 @use '../abstracts/variables' as *;
 
-// Ultimate centering of children elements
+// Ultimate centering of flex children elements
 @mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+// Flex with space between
+@mixin flex-sp-between {
+  display: flex;
+  justify-content: space-between;
 }
 
 // Setup for pseudo elements
@@ -21,4 +27,23 @@
   @media screen and(min-width: map-get($breakpoints-up, $key)){
     @content;
   }
+}
+
+// Mixin for absolute vertical centering
+@mixin top-50 {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// Mixin for absolute horizontal centering
+@mixin left-50 {
+  top: 50%;
+  transform: translateX(-50%);
+}
+
+// Mixin for both horizontal and vertical absolute centering
+@mixin top-left-50 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

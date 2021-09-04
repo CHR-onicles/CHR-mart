@@ -5,14 +5,12 @@
 .preloader{
     position: fixed;
     inset: 0;
-    z-index: 999;
+    z-index: 9999;
     background: white;
 
     &__text, &__img-wrapper{
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        @include top-left-50;
     }
 
     &__img-wrapper{
