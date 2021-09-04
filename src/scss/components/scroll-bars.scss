@@ -10,7 +10,7 @@ body{
 
 ::-webkit-scrollbar-thumb {
     background: rgba(black, 0.6);
-    border: 4px solid transparent;
+    border: rem(4) solid transparent;
     background-clip: content-box;
-    border-radius: 20px;
+    border-radius: rem(20);
 }

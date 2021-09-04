@@ -159,6 +159,38 @@ h3, h4, h5, h6 {
   line-height: 1.2;
 }
 
+.hero {
+  margin-top: 1.5rem;
+}
+
+.hero-slides__cta {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.0625rem;
+}
+
+.hero-slides__cta {
+  position: relative;
+  padding: 1em 3em;
+  margin-top: 4em;
+  background: #fec701;
+}
+.hero-slides__cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background-color: #cb9f01;
+  transition: opacity 0.4s;
+  z-index: -1;
+}
+.hero-slides__cta:hover::before {
+  opacity: 1;
+}
+
 body {
   overflow: overlay;
 }
@@ -169,9 +201,9 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.6);
-  border: 4px solid transparent;
+  border: rem(4) solid transparent;
   background-clip: content-box;
-  border-radius: 20px;
+  border-radius: rem(20);
 }
 
 .nav-badge {
@@ -216,7 +248,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid red;
   position: relative;
 }
 .header__middle-nav-item {
@@ -334,4 +365,76 @@ body {
     margin-inline: auto;
     order: 2;
   }
+}
+
+.nav-btns {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 5%;
+  width: 3.75rem;
+  z-index: 99;
+}
+.nav-btns span {
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
+  background: rgba(252, 252, 252, 0.4);
+  cursor: pointer;
+  transition: all 0.4s;
+}
+.nav-btns span.active {
+  width: 2.1875rem;
+  border-radius: 0.9375rem;
+  background: #fcfcfc;
+}
+
+.hero-slides {
+  height: 21.875rem;
+  position: relative;
+  width: 90%;
+  max-width: 31.25rem;
+  margin: 0 auto;
+  color: #fcfcfc;
+  border-radius: 0.625rem;
+  overflow: hidden;
+}
+.hero-slides__slide {
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  inset: 0;
+  display: none;
+}
+.hero-slides__slide.active {
+  display: flex;
+}
+.hero-slides__img-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.hero-slides__img-wrapper img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.hero-slides__text-content {
+  width: 90%;
+  padding-left: 2.5rem;
+}
+.hero-slides h2 {
+  font-size: 2rem;
+}
+.hero-slides__top-text {
+  font-weight: 300;
+  white-space: nowrap;
+}
+.hero-slides__bottom-text {
+  font-weight: 400;
+}
+.hero-slides__extra-text {
+  margin-top: 1em;
 }

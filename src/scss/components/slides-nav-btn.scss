@@ -1,0 +1,28 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/colors' as *;
+
+.nav-btns {
+    @include flex-sp-between;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 5%;
+    width: rem(60);
+    z-index: 99;
+
+    span {
+        width: rem(6);
+        height: rem(6);
+        border-radius: 50%;
+        background: rgba($clr-white, 0.4);
+        cursor: pointer;
+        transition: all 0.4s;
+
+        &.active {
+            width: rem(35);
+            border-radius: rem(15);
+            background: $clr-white;
+        }
+    }
+}

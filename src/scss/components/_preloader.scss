@@ -9,7 +9,6 @@
     background: white;
 
     &__text, &__img-wrapper{
-        position: absolute;
         @include top-left-50;
     }
 

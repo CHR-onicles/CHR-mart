@@ -17,7 +17,7 @@
         &-list{
             @include flex-sp-between;
             align-items: center;
-            border: 1px solid red;
+            // border: 1px solid red;
             position: relative;
 
         }
@@ -50,7 +50,7 @@
         }
 
         &-item:not(:nth-child(1)){
-            svg{ // couldn't use class name because BEM  and inheritance interfered
+            svg{ // couldn't use class name because of BEM  interference
                 &:hover{
                     stroke: $clr-accent-dark;
                 }

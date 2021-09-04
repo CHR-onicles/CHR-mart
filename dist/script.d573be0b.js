@@ -119,13 +119,95 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"js/script.js":[function(require,module,exports) {
 var preloader = document.querySelector(".preloader");
-var s = document.querySelectorAll(".header__bottom-nav-btn")[1];
+var text_fade_styles = ["fade-in-right-1", "fade-in-right-2", "fade-in-right-3", "fade-in-left-1", "fade-in-left-2", "fade-in-left-3"];
+var slide_nav_btns = document.querySelectorAll(".nav-btn");
+var slides = document.querySelectorAll(".hero-slides__slide");
 window.addEventListener("load", function () {
   preloader.classList.add("disappear");
+  timeOuts();
+  setTimeout(autoPlay, 2000);
 });
-s.addEventListener("click", function () {
-  console.log("btn clicked");
-});
+
+function timeOuts() {
+  setTimeout(function () {
+    var fade_imp = document.querySelectorAll(".fade-imp");
+    fade_imp.forEach(function (item) {
+      item.classList.add("appear");
+    });
+  });
+  setTimeout(function () {
+    var fade = document.querySelectorAll(".fade");
+    fade.forEach(function (item) {
+      item.classList.add("appear");
+    });
+  }, 1000);
+}
+
+var _loop = function _loop(i) {
+  slide_nav_btns[i].addEventListener("click", function () {
+    slide_nav_btns.forEach(function (item) {
+      item.classList.remove("active");
+    });
+    slides.forEach(function (item) {
+      item.classList.remove("active");
+      removeAllFades([item.querySelector(".hero-slides__img-wrapper"), item.querySelector(".hero-slides__top-text"), item.querySelector(".hero-slides__bottom-text"), item.querySelector(".hero-slides__extra-text")]);
+      item.querySelector(".hero-slides__cta").classList.remove("fade", "fade-in-bottom");
+      var all_appear = item.querySelectorAll(".appear");
+      all_appear.forEach(function (item) {
+        item.classList.remove("appear");
+      });
+    });
+    slide_nav_btns[i].classList.add("active");
+    slides[i].classList.add("active");
+
+    if (i === 1) {
+      // possible feature:  pick randomly
+      slides[i].querySelector(".hero-slides__img-wrapper").classList.add("fade-imp", "fade-in-left-2");
+    } else if (i === 2) {
+      slides[i].querySelector(".hero-slides__img-wrapper").classList.add("fade-imp", "fade-in-flat-top");
+    } else {
+      slides[i].querySelector(".hero-slides__img-wrapper").classList.add("fade-imp", "fade-in-bottom");
+    }
+
+    var val = Math.floor(Math.random() * text_fade_styles.length);
+    var val2 = Math.floor(Math.random() * text_fade_styles.length);
+    var rand = text_fade_styles[val];
+    var rand2 = text_fade_styles[val2]; // console.log(val, val2, rand, rand2);
+
+    slides[i].querySelector(".hero-slides__top-text").classList.add("fade", "".concat(rand));
+    slides[i].querySelector(".hero-slides__bottom-text").classList.add("fade", "".concat(rand2));
+    slides[i].querySelector(".hero-slides__extra-text").classList.add("fade", "".concat(rand));
+    slides[i].querySelector(".hero-slides__cta").classList.add("fade", "fade-in-bottom");
+    timeOuts();
+  });
+};
+
+for (var i = 0; i < slide_nav_btns.length; ++i) {
+  _loop(i);
+}
+
+function removeAllFades(items) {
+  items.forEach(function (item, index) {
+    console.log(item, index);
+    text_fade_styles.forEach(function (fade) {
+      item.classList.remove(fade);
+    });
+  });
+}
+
+var autoplay_interval;
+
+function autoPlay() {
+  var cur_index = 1;
+  autoplay_interval = setInterval(function () {
+    if (cur_index > 2) {
+      cur_index = 0;
+    }
+
+    slide_nav_btns[cur_index].click();
+    cur_index++;
+  }, 10000);
+}
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
