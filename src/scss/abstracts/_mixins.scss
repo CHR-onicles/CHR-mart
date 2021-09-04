@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------------
 // This file contains all application-wide Sass mixins.
 // -----------------------------------------------------------------------------
-
+@use '../abstracts/variables' as *;
 
 // Ultimate centering of children elements
 @mixin flex-center {
@@ -14,4 +14,11 @@
 @mixin pseudo {
   content: "";
   position: absolute;
+}
+
+// Mixin for media queries
+@mixin mq($key){
+  @media screen and(min-width: map-get($breakpoints-up, $key)){
+    @content;
+  }
 }

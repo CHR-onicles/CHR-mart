@@ -1,0 +1,27 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+@use '../base/colors' as *;
+
+.preloader{
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: white;
+
+    &__text, &__img-wrapper{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__img-wrapper{
+        min-width: rem(375);
+    }
+
+    &__text{
+        animation: fade-in-out 2s linear infinite;
+        color: $clr-black;
+    }
+    
+}

@@ -103,6 +103,21 @@ img, iframe {
   transform: translate(0) rotate(0) skew(0);
 }
 
+.disappear {
+  opacity: 0;
+  visibility: hidden;
+  z-index: -999;
+  animation: none;
+}
+
+@keyframes fade-in-out {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 body {
   line-height: 1.5;
   color: rgba(0, 0, 0, 0.8);
@@ -130,4 +145,24 @@ body {
   border: 4px solid transparent;
   background-clip: content-box;
   border-radius: 20px;
+}
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: white;
+}
+.preloader__text, .preloader__img-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.preloader__img-wrapper {
+  min-width: 23.4375rem;
+}
+.preloader__text {
+  animation: fade-in-out 2s linear infinite;
+  color: rgba(0, 0, 0, 0.8);
 }

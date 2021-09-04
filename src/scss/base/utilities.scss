@@ -82,6 +82,30 @@
     opacity: 1;
     transform: translate(0) rotate(0) skew(0);
 }
+.disappear{
+    opacity: 0;
+    visibility: hidden;
+    z-index: -999;
+    animation: none;
+}
 //-------------------------
 // End  Transitions
 // ------------------------
+
+
+//-------------------------
+//  Animations
+// ------------------------
+@keyframes fade-in-out {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+//-------------------------
+//  End Animations
+// ------------------------
+
+
