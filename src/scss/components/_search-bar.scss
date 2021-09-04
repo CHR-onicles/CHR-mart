@@ -1,0 +1,41 @@
+@use '../base/colors' as *;
+@use '../abstracts/functions'  as *;
+@use '../abstracts/mixins'  as *;
+
+.search-wrapper {
+    position: absolute;
+    top: 120%;
+    left: 0;
+    @include width-min(100%, rem(400)); /* TODO: recheck size while device width increases */
+    
+    .search-bar {
+        padding: 0.8em 4em 0.8em 1.5em;
+        border: 2px solid mix(transparent, black, 80%);
+        width: 100%;
+
+        &:focus{
+            border: 2px solid $clr-accent;
+        }
+    }
+    
+    .search-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        
+        background: $clr-accent;
+        padding-inline: 0.8rem;
+    }
+    
+    .search-icon {
+        width: rem(20);
+        stroke: $clr-black;
+    }
+
+    @include mq(medium){
+        position: relative;
+        margin-inline: auto;
+        order: 2;
+    }
+}

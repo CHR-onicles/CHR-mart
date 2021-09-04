@@ -1,6 +1,7 @@
 @use '../base/colors' as *;
 @use '../abstracts/functions' as *;
 @use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
 
 .header{
 
@@ -9,6 +10,73 @@
     }
 
     &__middle-nav{
+        background: $clr-white;
+        padding: .7rem 0 4rem;
+        overflow: hidden;
+
+        &-list{
+            @include flex-sp-between;
+            align-items: center;
+            border: 1px solid red;
+            position: relative;
+
+        }
+
+        &-item{
+            position: relative;
+            // border: 1px solid brown;
+            padding-inline: .6em;
+        }
+
+        &-item:nth-child(1){
+            order: 1;
+        }
+
+        &-item:nth-child(2){
+            margin-left: auto;
+            order: 3;
+
+            @include mq(medium){
+                margin-left: 0;
+            }
+        }
+
+        &-item:nth-child(3){
+            order: 4;
+        }
+
+        &-item:nth-child(4){
+            order: 5;
+        }
+
+        &-item:not(:nth-child(1)){
+            svg{ // couldn't use class name because BEM  and inheritance interfered
+                &:hover{
+                    stroke: $clr-accent-dark;
+                }
+            }
+        }
+
+        &-logo{
+            // border: 1px solid red;
+
+            img {
+                width: rem(50);
+            }
+
+            span {
+                font-family: $logo-font;
+                font-size: rem(28);
+                font-weight: 600;
+                margin: auto 0;
+                // color: mix(black, $clr-accent, 5%);
+            }
+        }
+
+        &-icon{
+            stroke: $clr-black;
+            width: rem(25);
+        }
 
     }
 
@@ -27,7 +95,6 @@
         }
 
         &-list{
-            list-style-type: none;
             @include flex-sp-between;
         }
 

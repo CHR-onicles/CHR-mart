@@ -5,10 +5,12 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CHR-mart | E-commerce</title>
+        <link rel="shortcut icon" href="/favicon.3163dc4b.ico" type="image/x-icon">
         <!-- Google font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
         <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
         <!-- Owl Carousel -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -22,7 +24,7 @@
         <!-- Preloader -->
         <div class="preloader">
             <div class="preloader__img-wrapper">
-                <img src="/preloader.c3e3c066.gif" alt="Preloader">
+                <img src="/preloader.333b2b09.gif" alt="Preloader">
             </div>
             <h2 class="preloader__text">Loading...</h2>
         </div>
@@ -31,13 +33,49 @@
         <!-- Header -->
         <header class="header">
             <!--  nav -->
-            <nav class="header__-nav">
+            <nav class="header__top-nav">
                 
             </nav>
             <!-- End  nav -->
 
             <!-- Middle nav -->
-            <nav class="header__middle-nav"></nav>
+            <nav class="header__middle-nav">
+                <div class="container">
+                    <ul class="header__middle-nav-list row">
+                        <li class="header__middle-nav-logo row">
+                            <img src="/logo-fill.b72ad9a1.png" alt="CHR logo">
+                            <span>mart</span>
+                        </li>
+                        <li class="header__middle-nav-item">
+                            <a class="header__middle-nav-btn" href="#">
+                                <svg class="header__middle-nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>My Account</title><path d="M344,144c-3.92,52.87-44,96-88,96s-84.15-43.12-88-96c-4-55,35-96,88-96S348,90,344,144Z" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></path><path d="M256,304c-87,0-175.3,48-191.64,138.6C62.39,453.52,68.57,464,80,464H432c11.44,0,17.62-10.48,15.65-21.4C431.3,352,343,304,256,304Z" style="fill:none;stroke-miterlimit:10;stroke-width:32px"></path></svg>
+                            </a>
+                        </li>
+                        <li class="header__middle-nav-item">
+                            <a class="header__middle-nav-btn" href="#">
+                                <svg class="header__middle-nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>Wishlist</title><path d="M352.92,80C288,80,256,144,256,144s-32-64-96.92-64C106.32,80,64.54,124.14,64,176.81c-1.1,109.33,86.73,187.08,183,252.42a16,16,0,0,0,18,0c96.26-65.34,184.09-143.09,183-252.42C447.46,124.14,405.68,80,352.92,80Z" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></path></svg>
+                            </a>
+                            <span class="nav-badge">
+                                <span class="number">0</span>
+                            </span>
+                        </li>
+                        <li class="header__middle-nav-item">
+                            <a class="header__middle-nav-btn" href="#">
+                                <svg class="header__middle-nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>Cart</title><circle cx="176" cy="416" r="16" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></circle><circle cx="400" cy="416" r="16" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></circle><polyline points="48 80 112 80 160 352 416 352" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></polyline><path d="M160,288H409.44a8,8,0,0,0,7.85-6.43l28.8-144a8,8,0,0,0-7.85-9.57H128" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></path></svg>
+                            </a>
+                            <span class="nav-badge">
+                                <span class="number">0</span>
+                            </span>
+                        </li>
+                        <div class="search-wrapper">
+                            <input class="search-bar" type="text" aria-label="Search for anything" placeholder="I'm shopping for...">
+                            <button class="search-btn" type="button">
+                                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>Search</title><path d="M221.09,64A157.09,157.09,0,1,0,378.18,221.09,157.1,157.1,0,0,0,221.09,64Z" style="fill:none;stroke-miterlimit:10;stroke-width:32px"></path><line x1="338.29" y1="338.29" x2="448" y2="448" style="fill:none;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"></line></svg>
+                            </button>
+                        </div>
+                    </ul>
+                </div>
+            </nav>
             <!-- End Middle nav -->
 
             <!-- Bottom nav -->
@@ -78,5 +116,11 @@
 
         <p>Lorem ipsum ed voluptatum nam pariatur praesentium, animi at assumenda doloribus delectus similique cupiditate repudiandae eum blanditiis ea magnam! Soluta magnam iusto doloremque a corporis temporibus blanditiis quae unde repellat, recusandae sapiente, omnis in ab placeat ipsa quisquam impedit esse dolor exercitationem pariatur amet vitae accusamus id. Possimus unde ducimus vitae ea totam labore alias libero? Ut veniam repellat facilis delectus assumenda sunt culpa dicta laudantium eos, vel pariatur velit odit voluptate nihil, fuga iure cum! Natus fugiat nesciunt eveniet incidunt provident! Ipsam, necessitatibus, corrupti expedita hic optio, repudiandae excepturi fuga pariatur magni repellendus vitae possimus rerum nihil facilis. Eaque, minus sed. Velit ducimus in quidem corrupti enim hic expedita architecto, quaerat quasi harum veritatis, nesciunt tenetur rerum eveniet officiis ullam ipsum provident vitae culpa! Facilis sunt cupiditate quos minus ex dignissimos temporibus nam delectus. Temporibus ipsam ratione debitis sit? Eaque adipisci possimus et, facere iste id. Quos, minus expedita? Illum, quidem quas asperiores repellat tempore optio est aperiam molestias pariatur placeat quisquam eos molestiae rem magni cumque enim perferendis odio accusantium accusamus ad iure, qui neque esse?</p>
 
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
     </body>
 </html>

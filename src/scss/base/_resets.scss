@@ -10,6 +10,7 @@ html {
 body{
   background: $clr-bg-light;
   overflow-x: hidden;
+  padding-bottom: 3.5rem; // modify this number - needed because bottom nav covers part of content 
 }
 
 *,
@@ -29,9 +30,15 @@ img, iframe {
   max-width: 100%;
 }
 
-button{
+button, input{
   background: none;
   border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+ul, ol {
+  list-style-type: none;
 }
 
 // Remove all animations and transitions for users
