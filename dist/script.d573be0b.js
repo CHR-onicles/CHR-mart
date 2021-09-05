@@ -167,9 +167,9 @@ var _loop = function _loop(i) {
       slides[i].querySelector(".hero-slides__img-wrapper").classList.add("fade-imp", "fade-in-flat-top");
     } else {
       slides[i].querySelector(".hero-slides__img-wrapper").classList.add("fade-imp", "fade-in-bottom");
-    }
+    } // console.log(slides[i], slides[i].querySelector(".hero-slides__img-wrapper").classList); - BUG: slides dont get animated when transitioning sometimes
 
-    console.log(slides[i], slides[i].querySelector(".hero-slides__img-wrapper").classList);
+
     var val = Math.floor(Math.random() * text_fade_styles.length);
     var val2 = Math.floor(Math.random() * text_fade_styles.length);
     var rand = text_fade_styles[val];
@@ -236,7 +236,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52267" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55278" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
