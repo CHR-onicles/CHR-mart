@@ -59,6 +59,7 @@ for (let i = 0; i < slide_nav_btns.length; ++i) {
             slides[i].querySelector(".hero-slides__img-wrapper").classList.add("fade-imp", "fade-in-bottom");
         }
 
+        console.log(slides[i], slides[i].querySelector(".hero-slides__img-wrapper").classList);
         let val = Math.floor(Math.random() * (text_fade_styles.length));
         let val2 = Math.floor(Math.random() * (text_fade_styles.length));
         let rand = text_fade_styles[val];
@@ -74,8 +75,7 @@ for (let i = 0; i < slide_nav_btns.length; ++i) {
 }
 
 function removeAllFades(items){
-    items.forEach((item, index) => {
-        console.log(item, index)
+    items.forEach((item) => {
         text_fade_styles.forEach((fade) => {
             item.classList.remove(fade);
         });
