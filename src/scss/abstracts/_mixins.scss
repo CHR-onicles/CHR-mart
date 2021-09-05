@@ -57,3 +57,9 @@
   width: $width;
   max-width: $max-width;
 }
+
+// Similar mixin as above but for height
+@mixin height-min($height, $max-height) {
+  height: $height;
+  max-height: $max-height;
+}

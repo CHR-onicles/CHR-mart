@@ -121,7 +121,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 var preloader = document.querySelector(".preloader");
 var text_fade_styles = ["fade-in-right-1", "fade-in-right-2", "fade-in-right-3", "fade-in-left-1", "fade-in-left-2", "fade-in-left-3"];
 var slide_nav_btns = document.querySelectorAll(".nav-btn");
-var slides = document.querySelectorAll(".hero-slides__slide");
+var slides = document.querySelectorAll(".hero__slide");
 window.addEventListener("load", function () {
   preloader.classList.add("disappear");
   timeOuts();
@@ -150,8 +150,8 @@ var _loop = function _loop(i) {
     });
     slides.forEach(function (item) {
       item.classList.remove("active");
-      removeAllFades([item.querySelector(".hero-slides__img-wrapper"), item.querySelector(".hero-slides__top-text"), item.querySelector(".hero-slides__bottom-text"), item.querySelector(".hero-slides__extra-text")]);
-      item.querySelector(".hero-slides__cta").classList.remove("fade", "fade-in-bottom");
+      removeAllFades([item.querySelector(".hero__img-wrapper"), item.querySelector(".hero__top-text"), item.querySelector(".hero__bottom-text"), item.querySelector(".hero__extra-text")]);
+      item.querySelector(".hero__cta").classList.remove("fade", "fade-in-bottom");
       var all_appear = item.querySelectorAll(".appear");
       all_appear.forEach(function (item) {
         item.classList.remove("appear");
@@ -162,12 +162,12 @@ var _loop = function _loop(i) {
 
     if (i === 1) {
       // possible feature:  pick randomly
-      slides[i].querySelector(".hero-slides__img-wrapper").classList.add("fade-imp", "fade-in-left-2");
+      slides[i].querySelector(".hero__img-wrapper").classList.add("fade-imp", "fade-in-left-2");
     } else if (i === 2) {
-      slides[i].querySelector(".hero-slides__img-wrapper").classList.add("fade-imp", "fade-in-flat-top");
+      slides[i].querySelector(".hero__img-wrapper").classList.add("fade-imp", "fade-in-flat-top");
     } else {
-      slides[i].querySelector(".hero-slides__img-wrapper").classList.add("fade-imp", "fade-in-bottom");
-    } // console.log(slides[i], slides[i].querySelector(".hero-slides__img-wrapper").classList); - BUG: slides dont get animated when transitioning sometimes
+      slides[i].querySelector(".hero__img-wrapper").classList.add("fade-imp", "fade-in-bottom");
+    } // console.log(slides[i], slides[i].querySelector(".hero__img-wrapper").classList); - BUG: slides dont get animated when transitioning sometimes
 
 
     var val = Math.floor(Math.random() * text_fade_styles.length);
@@ -175,10 +175,10 @@ var _loop = function _loop(i) {
     var rand = text_fade_styles[val];
     var rand2 = text_fade_styles[val2]; // console.log(val, val2, rand, rand2);
 
-    slides[i].querySelector(".hero-slides__top-text").classList.add("fade", "".concat(rand));
-    slides[i].querySelector(".hero-slides__bottom-text").classList.add("fade", "".concat(rand2));
-    slides[i].querySelector(".hero-slides__extra-text").classList.add("fade", "".concat(rand));
-    slides[i].querySelector(".hero-slides__cta").classList.add("fade", "fade-in-bottom");
+    slides[i].querySelector(".hero__top-text").classList.add("fade", "".concat(rand));
+    slides[i].querySelector(".hero__bottom-text").classList.add("fade", "".concat(rand2));
+    slides[i].querySelector(".hero__extra-text").classList.add("fade", "".concat(rand));
+    slides[i].querySelector(".hero__cta").classList.add("fade", "fade-in-bottom");
     timeOuts();
   });
 };
@@ -204,7 +204,8 @@ function autoPlay() {
       cur_index = 0;
     }
 
-    slide_nav_btns[cur_index].click();
+    slide_nav_btns[cur_index].click(); // automatically clicking the next slide (reduces flexibility of code - but it works)
+
     cur_index++;
   }, 10000);
 }

@@ -2,16 +2,19 @@
 @use '../abstracts/mixins' as *;
 @use '../base/colors' as *;
 
-.hero-slides {
-    height: rem(350);
-    position: relative;
-    @include width-min(90%, rem(500));
-    margin: 0 auto;
-    color: $clr-white;
-    border-radius: rem(10);
-    overflow: hidden;
-    // border: 1px solid red;
-    
+.hero{
+
+    &__slides{
+        position: relative;
+        @include height-min(55vh, rem(350));
+        @include width-min(100%, rem(500));
+        margin: 0 auto;
+        color: $clr-white;
+        border-radius: rem(10);
+        overflow: hidden;
+        // border: 1px solid red;
+    } 
+
     &__slide {
         flex-direction: column;
         justify-content: center;
@@ -23,7 +26,7 @@
             display: flex;
         }
     }
-
+    
     &__img-wrapper {
         position: absolute;
         inset: 0;
@@ -35,15 +38,15 @@
             height: 100%;
         }
     }
-
+    
     &__text-content {
         width: 90%;
         padding-left: 2.5rem;
     
     }
-
+    
     h2{
-        font-size: 2rem;
+        font-size: rem(28);
     }
     
     &__top-text {
