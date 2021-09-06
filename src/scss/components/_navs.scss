@@ -6,18 +6,18 @@
 .header {
     &__top-nav {
         display: none;
-        
+
         @include mq(medium) {
             display: block;
             background: $clr-primary;
             font-size: rem(13);
             color: $clr-white;
-            
+
             &-item {
                 display: flex;
                 align-items: center;
                 position: relative;
-                padding: .7rem 1rem;
+                padding: 0.7rem 1rem;
                 cursor: pointer;
 
                 &:hover {
@@ -30,14 +30,13 @@
                     }
                 }
 
-                &::before{
+                &::before {
                     @include pseudo;
                     @include top-50;
                     right: 0;
                     height: 40%;
                     width: rem(1);
-                    background: rgba($clr-primary-v-light, .4);
-
+                    background: rgba($clr-primary-v-light, 0.4);
                 }
             }
 
@@ -72,6 +71,21 @@
 
         @include mq(small) {
             padding-bottom: 0.7rem;
+        }
+
+        &-logo {
+            // border: 1px solid red;
+
+            img {
+                width: rem(50);
+            }
+
+            span {
+                font-family: $logo-font;
+                font-size: rem(28);
+                font-weight: 600;
+                margin: auto 0;
+            }
         }
 
         &-list {
@@ -117,24 +131,50 @@
             }
         }
 
-        &-logo {
-            // border: 1px solid red;
+        &-menu {
+            display: flex;
+            // border: 1px solid;
 
-            img {
-                width: rem(50);
+            @include mq(medium) { 
+                gap: rem(3);
             }
 
-            span {
-                font-family: $logo-font;
-                font-size: rem(28);
-                font-weight: 600;
-                margin: auto 0;
+            &-text-content {
+                display: none;
+
+                @include mq(medium) {
+                    display: flex;
+                    flex-direction: column;
+                    text-transform: capitalize;
+                    // border: 1px solid black;
+
+                    .top {
+                        font-size: rem(13);
+                        margin-bottom: rem(-4);
+                        color: mix(white, $clr-gray, 10%);
+                    }
+
+                    .bottom {
+                        font-size: rem(14);
+                        // border: 1px solid brown;
+                        color: $clr-black;
+                    }
+                }
             }
+        }
+
+        &-icon-wrapper {
+            position: relative;
         }
 
         &-icon {
             stroke: $clr-black;
             width: rem(25);
+            // align-self: center;
+
+            @include mq(medium) {
+                width: rem(32);
+            }
         }
     }
 

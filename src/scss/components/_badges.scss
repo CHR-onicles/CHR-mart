@@ -4,12 +4,17 @@
 
 .nav-badge {
     position: absolute;
-    top: -15%;
-    right: 2%;
+    top: -30%;
+    right: -10%;
     background: $clr-accent;
     font-size: rem(13);
     padding: 0.05em 0.4em;
     border-radius: 50%;
+
+    @include mq(medium) {
+        top: -8%;
+        right: -3%;
+    }
 }
 
 .hero__f-card-badge {
