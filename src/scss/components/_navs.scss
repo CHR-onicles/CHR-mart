@@ -34,8 +34,7 @@
                     @include pseudo;
                     @include top-50;
                     right: 0;
-                    height: 40%;
-                    width: rem(1);
+                    @include size(rem(1), 40%);
                     background: rgba($clr-primary-v-light, 0.4);
                 }
             }

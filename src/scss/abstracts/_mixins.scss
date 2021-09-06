@@ -65,7 +65,7 @@
 }
 
 // Mixin to merge width and height properties
-@mixin size($width, $height) {
+@mixin size($width, $height: $width) {
   width: $width;
   height: $height;
 }
