@@ -1,5 +1,6 @@
 @use '../base/colors' as *;
 @use '../abstracts/functions'  as *;
+@use '../abstracts/variables'  as *;
 @use '../abstracts/mixins'  as *;
 
 .search-wrapper {
@@ -10,9 +11,10 @@
     
     .search-bar {
         padding: 0.8em 4em 0.8em 1.5em;
-        border: 2px solid mix(transparent, black, 80%);
+        border: 2px solid mix(transparent, black, 90%);
         width: 100%;
-
+        border-radius: $border-radius-2;
+        
         &:focus{
             border: 2px solid $clr-accent;
         }
@@ -23,9 +25,10 @@
         top: 0;
         right: 0;
         height: 100%;
-        
-        background: $clr-accent;
         padding-inline: 0.8rem;
+        background: $clr-accent;
+        border-top-right-radius: $border-radius-2;
+        border-bottom-right-radius: $border-radius-2;
     }
     
     .search-icon {

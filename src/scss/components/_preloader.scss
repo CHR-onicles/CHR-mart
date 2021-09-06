@@ -19,6 +19,8 @@
     &__text{
         animation: fade-in-out 2s linear infinite;
         color: $clr-black;
+        font-family: Verdana, Geneva, Tahoma, sans-serif; // prevented using the site's font in case it hadn't loaded yet
+        font-weight: 500;
     }
     
 }
