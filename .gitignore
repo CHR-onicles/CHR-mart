@@ -5,3 +5,5 @@
 *.scss.map
 node_modules
 todo.md
+
+dist/
