@@ -12,12 +12,15 @@
     border-radius: $border-radius;
     overflow: hidden;
 
+    @include hover-zoom;
+
     &-img {
         position: absolute;
         inset: 0;
         object-fit: cover;
         @include size(100%, 100%);
         object-position: center;
+        transition: transform .4s ease-out;
     }
 
     &-text-content {

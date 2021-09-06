@@ -69,3 +69,12 @@
   width: $width;
   height: $height;
 }
+
+// Mixin to zoom on images on hover
+@mixin hover-zoom {
+  &:hover {
+    img {
+      transform: scale(1.1)
+    }
+  }
+}
