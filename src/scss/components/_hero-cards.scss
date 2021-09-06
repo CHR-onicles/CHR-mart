@@ -39,8 +39,7 @@
     }
 }
 
-// Should be nth-child(2) ??? but 3 works for now
-.hero__f-card:nth-child(3) { 
+.hero__f-card:nth-child(3) {
     text-align: right;
 }
 
@@ -60,5 +59,4 @@
     .hero__f-card-text {
         margin-top: 0;
     }
-
 }
