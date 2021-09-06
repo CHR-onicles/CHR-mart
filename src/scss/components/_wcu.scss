@@ -1,0 +1,86 @@
+// -------------------------------------------------
+// Contains styles for the Why Choose Us component
+// -------------------------------------------------
+@use '../base/colors' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.wcu{
+    margin-top: 1.8rem;
+    
+    &__content {
+        background: $clr-white;        
+        padding: 1rem .9rem;
+        border-radius: $border-radius;
+
+        @include mq(small) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 1rem;
+            row-gap: .8rem;
+            padding-left: 2.5rem;
+        }
+
+        @include mq(medium) {
+            display: flex;
+            padding-left: .9rem;
+        }
+    }
+
+    &__reason {
+        gap: .8rem;
+        width: 70%;
+        position: relative;
+        padding: .5rem 0;
+        margin: 0 auto;
+        // border: 1px solid;
+
+        @include mq(small) { 
+            width: max-content;
+            margin: 0;
+        }
+
+        @include mq(medium) {
+            flex-basis: 100%;
+
+            &:not(:last-child)::before {
+                @include pseudo;
+                top: 0;
+                right: 0;
+                @include size(rem(1), 100%);
+                background: rgba($clr-gray, .3);
+            }
+        }
+    }
+
+    &__text-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__text-content:nth-child(1), 
+    &__text-content:nth-child(2) { //fixes all the space problems even though just 2 are specified here...
+        justify-content: space-evenly;
+    }
+
+    &__top-text {
+        text-transform: uppercase;
+        font-size: rem(13);
+        font-weight: 500;
+        width: 90%;
+    }
+
+    &__bottom-text {
+        font-size: rem(13);
+        color: $clr-gray;
+        width: 90%;
+    }
+
+    &__icon {
+        stroke: $clr-primary;
+        fill: $clr-primary;
+        width: rem(40);
+    }
+}
