@@ -2,17 +2,13 @@ $clr-danger: hsl(0, 82%, 44%);
 $clr-success: hsl(93, 74%, 38%);
 
 $clr-white: hsl(0, 0%, 99%);
+$clr-gray: hsl(0, 0%, 40%);
 $clr-black: mix(transparent, black, 20%);
 
 $clr-bg-light: hsl(200, 14%, 96%);
 
-$clr-primary: #263c97;
-$clr-primary-100: mix(white, $clr-primary, 50%); 
-$clr-primary-200: mix(white, $clr-primary, 30%); 
-$clr-primary-300: mix(white, $clr-primary, 10%); 
-$clr-primary-500: mix(black, $clr-primary, 10%); 
-$clr-primary-600: mix(black, $clr-primary, 20%); 
-$clr-primary-700: mix(black, $clr-primary, 40%); 
+$clr-primary-v-light: hsl(228, 100%, 80%);
+$clr-primary: hsl(228, 60%, 37%);
 
 $clr-accent: hsl(47, 99%, 50%);
 $clr-accent-dark: hsl(45, 100%, 45%);

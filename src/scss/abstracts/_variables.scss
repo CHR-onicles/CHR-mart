@@ -3,25 +3,21 @@
 // -----------------------------------------------------------------------------
 @use './functions' as *;
 
-
 // CSS Variables (to be modified later)
-:root{
-  --max-width: 71.25em; // for utility container
+:root {
+  --max-width: 71.25rem; // for utility container
 }
 
 // Sass Variables (no modification)
-$logo-font: 'Poppins', sans-serif;
+$logo-font: "Poppins", sans-serif;
 $border-radius: rem(10);
 $border-radius-2: rem(4);
 
-
-
-
-// Breakpoints map
+// Breakpoints map - Since I'm using mobile-first workflow, no need for small screen size
 $breakpoints-up: (
-  'small': 20em,  // 320px
-  'medium': 48em,  // 768px
-  'large': 62em,  // 992px (or 1024 if needed)
-  'xlarge': 90em, // 1440px
-  'very_large': 160em // 2560px
+  "small": 48em, // 768px
+  "medium": 62em, // 992px (or 1024 if needed)
+  "large": 75em, // 1200px
+  "xlarge": 90em, // 1440px
+  "max": 160em // 2560px
 );

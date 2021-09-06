@@ -8,18 +8,18 @@
     top: 120%;
     left: 0;
     @include width-min(100%, rem(400)); /* TODO: recheck size while device width increases */
-    
+
     .search-bar {
         padding: 0.8em 4em 0.8em 1.5em;
         border: 2px solid mix(transparent, black, 90%);
         width: 100%;
         border-radius: $border-radius-2;
-        
-        &:focus{
+
+        &:focus {
             border: 2px solid $clr-accent;
         }
     }
-    
+
     .search-btn {
         position: absolute;
         top: 0;
@@ -30,13 +30,13 @@
         border-top-right-radius: $border-radius-2;
         border-bottom-right-radius: $border-radius-2;
     }
-    
+
     .search-icon {
         width: rem(20);
         stroke: $clr-black;
     }
 
-    @include mq(medium){
+    @include mq(small) {
         position: relative;
         margin-inline: auto;
         order: 2;

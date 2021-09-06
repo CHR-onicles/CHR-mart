@@ -3,9 +3,8 @@
 @use '../abstracts/variables' as *;
 @use '../base/colors' as *;
 
-.hero{
-
-    &__slides{
+.hero {
+    &__slides {
         position: relative;
         @include height-min(55vmax, rem(350));
         // @include width-min(100%, rem(500));
@@ -15,7 +14,7 @@
         border-radius: $border-radius;
         overflow: hidden;
         // border: 1px solid red;
-    } 
+    }
 
     &__slide {
         flex-direction: column;
@@ -24,11 +23,11 @@
         inset: 0;
         display: none;
 
-        &.active{
+        &.active {
             display: flex;
         }
     }
-    
+
     &__img-wrapper {
         position: absolute;
         inset: 0;
@@ -39,21 +38,20 @@
             @include size(100%, 100%);
         }
     }
-    
+
     &__text-content {
         width: 90%;
         padding-left: 2.5rem;
-    
     }
-    
-    h2{
+
+    h2 {
         font-size: rem(28);
 
-        @include mq(medium){
+        @include mq(small) {
             font-size: rem(35);
         }
     }
-    
+
     &__top-text {
         font-weight: 300;
         white-space: nowrap;
@@ -67,7 +65,7 @@
         margin-top: 1em;
         font-size: rem(14);
 
-        @include mq(medium){
+        @include mq(small) {
             font-size: rem(16);
         }
     }

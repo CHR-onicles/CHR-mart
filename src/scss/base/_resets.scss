@@ -2,6 +2,7 @@
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
 @use './colors' as *;
+@use '../abstracts/mixins' as *;
 
 html {
   scroll-behavior: smooth;
@@ -11,6 +12,10 @@ body{
   background: $clr-bg-light;
   overflow-x: hidden;
   padding-bottom: 3.5rem; // modify this number - needed because bottom nav covers part of content 
+
+  @include mq(medium) {
+    padding-bottom: 0;
+  }
 }
 
 *,

@@ -3,61 +3,121 @@
 @use '../abstracts/mixins' as *;
 @use '../abstracts/variables' as *;
 
-.header{
-
-    &__top-nav{
+.header {
+    &__top-nav {
         display: none;
+        
+        @include mq(medium) {
+            display: block;
+            background: $clr-primary;
+            font-size: rem(13);
+            color: $clr-white;
+            
+            &-item {
+                display: flex;
+                align-items: center;
+                position: relative;
+                padding: .7rem 1rem;
+                cursor: pointer;
+
+                &:hover {
+                    .header__top-nav-item-name {
+                        color: $clr-accent;
+                    }
+
+                    .header__top-nav-icon {
+                        stroke: $clr-accent;
+                    }
+                }
+
+                &::before{
+                    @include pseudo;
+                    @include top-50;
+                    right: 0;
+                    height: 40%;
+                    width: rem(1);
+                    background: rgba($clr-primary-v-light, .4);
+
+                }
+            }
+
+            &-item:nth-child(1) {
+                padding-left: 0;
+            }
+
+            &-item:last-child {
+                padding-right: 0;
+
+                &::before {
+                    content: none;
+                }
+            }
+
+            &-item:nth-child(3) {
+                margin-left: auto;
+            }
+
+            &-icon {
+                width: rem(16);
+                stroke: $clr-white;
+                padding-left: rem(5);
+            }
+        }
     }
 
-    &__middle-nav{
+    &__middle-nav {
         background: $clr-white;
-        padding: .7rem 0 4rem;
+        padding: 0.7rem 0 4rem;
         overflow: hidden;
 
-        &-list{
+        @include mq(small) {
+            padding-bottom: 0.7rem;
+        }
+
+        &-list {
             @include flex-sp-between;
             align-items: center;
             // border: 1px solid red;
             position: relative;
-
         }
 
-        &-item{
+        &-item {
             position: relative;
             // border: 1px solid brown;
-            padding-inline: .6em;
+            padding-inline: 0.6em;
         }
 
-        &-item:nth-child(1){
+        &-item:nth-child(1) {
             order: 1;
         }
 
-        &-item:nth-child(2){
+        &-item:nth-child(2) {
             margin-left: auto;
             order: 3;
 
-            @include mq(medium){
+            @include mq(small) {
                 margin-left: 0;
             }
         }
 
-        &-item:nth-child(3){
+        &-item:nth-child(3) {
             order: 4;
         }
 
-        &-item:nth-child(4){
+        &-item:nth-child(4) {
             order: 5;
         }
 
-        &-item:not(:nth-child(1)){
-            svg{ // couldn't use class name because of BEM  interference
-                &:hover{
+        &-item:not(:nth-child(1)) {
+            svg {
+                // couldn't use class name because of pseudo-class of parent
+                &:hover {
                     stroke: $clr-accent-dark;
                 }
             }
         }
 
-        &-logo{
+        &-logo {
             // border: 1px solid red;
 
             img {
@@ -69,18 +129,16 @@
                 font-size: rem(28);
                 font-weight: 600;
                 margin: auto 0;
-                // color: mix(black, $clr-accent, 5%);
             }
         }
 
-        &-icon{
+        &-icon {
             stroke: $clr-black;
             width: rem(25);
         }
-
     }
 
-    &__bottom-nav{
+    &__bottom-nav {
         display: flex;
         justify-content: space-between;
         position: fixed;
@@ -90,39 +148,42 @@
         z-index: 99;
         overflow: hidden;
 
-        @include mq(medium){
+        @include mq(medium) {
             display: none;
         }
 
-        &-list{
+        &-list {
             @include flex-sp-between;
         }
 
-        &-list-item{
+        &-list-item {
             @include flex-center;
             flex-direction: column;
             // border: 1px solid red;
             padding: rem(5) 0;
         }
 
-        &-btn{
+        &-btn {
             display: inline-block;
             padding-inline: rem(5);
         }
 
-        &-icon{
+        &-icon {
             display: block;
             stroke: $clr-black;
             width: rem(25);
             margin: 0 auto;
         }
 
-        &-menu-name{
+        &-menu-name {
             display: block;
             font-size: rem(13);
-            font-weight: 500;
+            // font-weight: 500;
             text-align: center;
+
+            @include mq(small) {
+                font-size: rem(15);
+            }
         }
-        
     }
 }
