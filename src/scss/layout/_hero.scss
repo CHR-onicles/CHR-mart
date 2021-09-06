@@ -1,6 +1,12 @@
 // -----------------------------------------------------------------------------
-// This file contains all styles related to the header of the site/application.
+// This file contains all styles related to the hero section of the site.
 // -----------------------------------------------------------------------------
-.hero{
+.hero {
     margin-top: 1.5rem;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
 }

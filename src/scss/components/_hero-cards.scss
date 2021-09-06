@@ -1,0 +1,64 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../base/colors' as *;
+
+.hero__f-card {
+    position: relative;
+    width: 100%; /*TODO: alter on big screen */
+    min-height: rem(170);
+    color: $clr-white;
+    // border: 1px solid red;
+    border-radius: $border-radius;
+    overflow: hidden;
+
+    &-img {
+        position: absolute;
+        inset: 0;
+        object-fit: cover;
+        @include size(100%, 100%);
+        object-position: center;
+    }
+
+    &-text-content {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        inset: 15% 10%;
+        // border: 1px solid red;
+    }
+
+    &-heading {
+        font-size: rem(22);
+        font-weight: 400;
+    }
+
+    &-text {
+        font-size: rem(15);
+        margin: auto 0 rem(10);
+    }
+}
+
+// Should be nth-child(2) ??? but 3 works for now
+.hero__f-card:nth-child(3) { 
+    text-align: right;
+}
+
+.hero__f-card:last-child {
+    min-height: rem(170 * 2);
+    text-align: center;
+
+    // can't use parent selector because of pseudo-class in parent
+    .hero__f-card-img {
+        object-position: center 1%;
+    }
+
+    .hero__f-card-text-content {
+        top: 25%;
+    }
+
+    .hero__f-card-text {
+        margin-top: 0;
+    }
+
+}

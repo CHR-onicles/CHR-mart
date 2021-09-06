@@ -2,6 +2,8 @@
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
 @use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
 @use '../base/colors' as *;
 
 %button {
@@ -11,15 +13,19 @@
     text-transform: uppercase;
     font-weight: 500;
     letter-spacing: rem(1);
+    border-radius: $border-radius-2;
 }
 
 .hero__cta {
     @extend %button;
+
     position: relative;
     padding: 1em 3em;
     margin-top: 2em; /*TODO: increase based on device width */
     background: $clr-accent;
 
+    // used a pseudo element for hover event because transition
+    // will be overridden by a utility class that will be added later
     &::before{
         content: "";
         position: absolute;
@@ -35,3 +41,20 @@
     }
 }
 
+ .hero__f-card-cta {
+    @extend %button;
+
+    position: absolute;       
+    @include left-50; 
+    bottom: 7%;
+    color: $clr-white;
+    border: 2px solid $clr-white;
+    padding: .7em 3.5em;
+    z-index: 1;
+    transition: background-color .4s, color .4s;
+
+    &:hover {
+        background: $clr-white;
+        color: $clr-black;
+    }
+}

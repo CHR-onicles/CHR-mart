@@ -1,0 +1,27 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/colors' as *;
+
+.nav-badge {
+    position: absolute;
+    top: -15%;
+    right: 2%;
+    background: $clr-accent;
+    font-size: rem(13);
+    padding: 0.05em 0.4em;
+    border-radius: 50%;
+}
+
+.hero__f-card-badge {
+    position: absolute;
+    top: 10%;
+    @include left-50;
+    background: $clr-accent;
+    padding: 0.2em 0.8em;
+    color: $clr-black;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: rem(13);
+    border-radius: rem(5);
+    z-index: 1;
+}

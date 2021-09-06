@@ -39,7 +39,7 @@
 // Mixin for absolute horizontal centering
 @mixin left-50 {
   position: absolute;
-  top: 50%;
+  left: 50%;
   transform: translateX(-50%);
 }
 
@@ -62,4 +62,10 @@
 @mixin height-min($height, $max-height) {
   height: $height;
   max-height: $max-height;
+}
+
+// Mixin to merge width and height properties
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
 }

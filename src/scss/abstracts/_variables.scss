@@ -1,14 +1,19 @@
 // -----------------------------------------------------------------------------
-// This file contains all application-wide Sass variables.
+// This file contains all application-wide  variables.
 // -----------------------------------------------------------------------------
+@use './functions' as *;
+
 
 // CSS Variables (to be modified later)
 :root{
-  --max-width: 1180px; // for container
+  --max-width: rem(1180); // for utility container
 }
 
 // Sass Variables (no modification)
 $logo-font: 'Poppins', sans-serif;
+$border-radius: rem(10);
+$border-radius-2: rem(4);
+
 
 
 
