@@ -123,10 +123,9 @@
         }
 
         &-item:not(:nth-child(1)) {
-            svg {
-                // couldn't use class name because of pseudo-class of parent
+            svg { // couldn't use class name because of pseudo-class of parent
                 &:hover {
-                    stroke: $clr-accent-dark;
+                    stroke: $clr-accent-desat;
                 }
             }
         }
@@ -137,6 +136,20 @@
 
             @include mq(medium) { 
                 gap: rem(3);
+            }
+
+            &:hover {
+                .header__middle-nav-icon {
+                    stroke: $clr-accent-desat;
+                }
+
+                .top {
+                    color: $clr-accent-dark;
+                }
+
+                .bottom {
+                    color: $clr-accent-desat;
+                }
             }
 
             &-text-content {
