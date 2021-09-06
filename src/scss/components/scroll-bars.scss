@@ -1,16 +1,15 @@
-@use '../abstracts/functions';
-
 body{
     overflow: overlay; // for scroll bar as overlay
 }
 
+// Sass functions don't  work here
 ::-webkit-scrollbar {
-    width: rem(15);
+    width: 15px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgba(black, 0.6);
-    border: rem(4) solid transparent;
+    background: rgba(black, 0.5);
+    border: 4px solid transparent;
     background-clip: content-box;
-    border-radius: rem(20);
+    border-radius: 20px;
 }
