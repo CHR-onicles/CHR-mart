@@ -14,7 +14,8 @@
         padding: 1rem .9rem;
         border-radius: $border-radius;
 
-        @include mq(small) {
+        
+        @include mq(xsmall) {
             display: grid;
             grid-template-columns: 1fr 1fr;
             column-gap: 1rem;
@@ -22,6 +23,11 @@
             padding-left: 2.5rem;
         }
 
+        @media screen and (max-width: 35.5em) and (orientation: landscape) {
+            // to look better on small phones in landscape
+            padding-inline: 1rem;
+        }
+        
         @include mq(medium) {
             display: flex;
             padding-left: .9rem;
@@ -30,13 +36,13 @@
 
     &__reason {
         gap: .8rem;
-        width: 70%;
+        width: 100%;
         position: relative;
         padding: .5rem 0;
         margin: 0 auto;
         // border: 1px solid;
 
-        @include mq(small) { 
+        @include mq(xsmall) { 
             width: 90%;
             margin: 0;
             // border: 1px solid yellow;
@@ -45,7 +51,7 @@
                 @include pseudo;
                 top: 0;
                 right: -10%;
-                @include size(rem(1), 100%);
+                @include size(rem(1), 90%);
                 background: rgba($clr-gray, .2);
             }
         }
@@ -53,20 +59,28 @@
         @include mq(medium) {
             flex-basis: 100%;
 
-            &:not(:last-child)::before {
+            &::before {
+                display: none;
+            }
+
+            &::after {
                 @include pseudo;
-                top: 0;
+                @include top-50;
                 right: 0;
-                @include size(rem(1), 100%);
-                background: rgba($clr-gray, .3);
+                @include size(rem(1), 80%);
+                background: rgba($clr-gray, .2);
+            }
+
+            &:nth-child(5)::after {
+                display: none;
             }
         }
     }
 
     &__text-content {
-        display: flex;
+        @include flex-sp-between;
         flex-direction: column;
-        justify-content: space-between;
+        width: 100%;
 
         @include mq(small) {
             width: 90%;
@@ -82,8 +96,12 @@
         text-transform: uppercase;
         font-size: rem(13);
         font-weight: 500;
-        width: 90%;
+        width: 100%;
         // border: 1px solid;
+        
+        @include mq(small) {
+            width: 90%;
+        }
     }
 
     &__bottom-text {

@@ -15,6 +15,7 @@ $border-radius-2: rem(4);
 
 // Breakpoints map - Since I'm using mobile-first workflow, no need for small screen size
 $breakpoints-up: (
+  "xsmall": 35.5em, // 568px - small phones in landscape
   "small": 48em, // 768px
   "medium": 62em, // 992px (or 1024 if needed)
   "large": 75em, // 1200px
