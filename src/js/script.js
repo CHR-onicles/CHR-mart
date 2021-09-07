@@ -4,13 +4,6 @@ const slide_nav_btns = document.querySelectorAll(".nav-btn");
 const slides = document.querySelectorAll(".hero__slide");
 
 
-window.addEventListener("load", () => {
-    preloader.classList.add("disappear");
-
-    timeOuts();
-    setTimeout(autoPlay, 2000);
-});
-
 function timeOuts(){
     setTimeout(() => {
         const fade_imp = document.querySelectorAll(".fade-imp");
@@ -47,7 +40,7 @@ for (let i = 0; i < slide_nav_btns.length; ++i) {
                 item.classList.remove("appear");
             });
         });
-
+        
         slide_nav_btns[i].classList.add("active");
         slides[i].classList.add("active");
         if (i === 1){ // possible feature:  pick randomly
@@ -58,7 +51,7 @@ for (let i = 0; i < slide_nav_btns.length; ++i) {
         else {
             slides[i].querySelector(".hero__img-wrapper").classList.add("fade-imp", "fade-in-bottom");
         }
-
+        
         // console.log(slides[i], slides[i].querySelector(".hero__img-wrapper").classList); - BUG: slides dont get animated when transitioning sometimes
         let val = Math.floor(Math.random() * (text_fade_styles.length));
         let val2 = Math.floor(Math.random() * (text_fade_styles.length));
@@ -69,7 +62,7 @@ for (let i = 0; i < slide_nav_btns.length; ++i) {
         slides[i].querySelector(".hero__bottom-text").classList.add("fade", `${rand2}`);
         slides[i].querySelector(".hero__extra-text").classList.add("fade", `${rand}`);
         slides[i].querySelector(".hero__cta").classList.add("fade", "fade-in-bottom");
-
+        
         timeOuts();
     });
 }
@@ -93,3 +86,11 @@ function autoPlay(){
         cur_index++;
     }, 10000);
 }
+
+
+window.addEventListener("load", () => {
+    preloader.classList.add("disappear");
+
+    timeOuts();
+    setTimeout(autoPlay, 2000);
+});
