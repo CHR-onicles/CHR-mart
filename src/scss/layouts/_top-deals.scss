@@ -1,0 +1,46 @@
+@use '../base/colors' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as *;
+
+.top-deals {
+    padding: 1.5rem .2rem;
+    margin-top: 2rem;
+    background: $clr-white;
+
+    &__header {
+        display: flex;
+        flex-flow: column-reverse;
+        position: relative;
+
+        @include mq(small) {
+            flex-flow: row nowrap;
+            justify-content: space-between;
+        }
+
+        &::before {
+            @include pseudo;
+            top: 100%;
+            left: 0;
+            @include size(100%, rem(1));
+            background: rgba($clr-gray, .2);
+        }
+    }
+
+    &__heading {
+        width: max-content;
+        font-weight: 400;
+        padding: .8em 0 .3em;
+        position: relative;
+        // box-shadow: inset 0 rem(-2) $clr-primary; // unexpectedly creates a thin vertical blue trail
+
+        &::before {
+            @include pseudo;
+            top: 99%;
+            left: 0;
+            @include size(100%, rem(2));
+            background: $clr-primary;
+            border-radius: $border-radius-2;
+        }
+    }
+}
