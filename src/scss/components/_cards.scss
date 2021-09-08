@@ -20,7 +20,7 @@
         object-fit: cover;
         @include size(100%, 100%);
         object-position: center;
-        transition: transform .4s ease-out;
+        transition: transform 0.4s ease-out;
     }
 
     &-text-content {
@@ -60,7 +60,7 @@
     }
 
     .hero__f-card-heading {
-        margin-top: -.5em;
+        margin-top: -0.5em;
     }
 
     .hero__f-card-text {
@@ -68,20 +68,19 @@
     }
 }
 
-
 .top-deals__product-card {
     // width: 150px;
-    padding-right: .5rem;
+    padding-right: 0.5rem;
     overflow: hidden;
     position: relative;
     // outline: 1px solid brown;
-    
+
     &::before {
         @include pseudo;
         right: 0;
         @include top-50;
-        @include size (rem(1), 85%);
-        background: rgba($clr-gray, .2);
+        @include size(rem(1), 85%);
+        background: rgba($clr-gray, 0.2);
     }
 
     // &:last-child::before {
@@ -97,7 +96,7 @@
         overflow: hidden;
 
         img {
-            transition: transform .3s;
+            transition: transform 0.3s;
             max-height: 100%;
         }
     }
@@ -106,23 +105,23 @@
     // }
 
     &-title {
-            color: $clr-primary;
-            font-size: 1rem;
-            font-weight: 500;
+        color: $clr-primary;
+        font-size: 1rem;
+        font-weight: 500;
     }
 
     &-rating {
-        margin-top: .3rem;
+        margin-top: 0.3rem;
 
         @include mq(medium) {
             display: flex;
-            gap: .5em;
+            gap: 0.5em;
         }
     }
 
     &-stars {
         display: flex;
-        gap: .05em;
+        gap: 0.05em;
         // outline: 1px solid orange;
         white-space: nowrap;
 
@@ -133,19 +132,33 @@
     }
 
     &-reviews {
-        color: rgba($clr-gray, .8);
+        color: rgba($clr-gray, 0.8);
         font-size: rem(13);
     }
 
-    &-price{
+    &-price {
         display: inline-block;
-        color:rgba(black, .85);
+        color: rgba(black, 0.85);
         font-weight: 500;
+        
+        &, &--new {
+            @include mq(medium) {
+                margin-top: 0.8em;
+            }
+        }
+        
+        &--new {
+            display: inline-block;
+            font-weight: 500;
+            color: $clr-danger;
+        }
 
-        @include mq(medium) {
-            margin-top: .8em;
+        &--discount {
+            padding-left: 0.3em;
+            font-size: rem(14);
+            text-decoration: line-through;
+            color: rgba($clr-gray, 0.8);
         }
     }
 
 }
-

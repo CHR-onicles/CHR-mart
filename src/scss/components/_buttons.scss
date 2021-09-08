@@ -62,21 +62,43 @@
 
 .top-deals__product-card-cta {
     @extend %button;
+    
     display: block;
     padding: .7em 1.5em;
     margin-top: .5em;
     background: $clr-accent;
     font-size: rem(12);
     border-radius: rem(3);
+    transition: background-color .4s;
+
+    &:hover {
+        background: mix(black, $clr-accent, 5%);
+    }
 }
 
 // Modifying Owl Library buttons
 .owl-next{
     right: -7%;
+
+    @include mq(small) {
+        right: -5%;
+    }
+
+    @include mq(large) {
+        right: -3%;
+    }
 }
 
 .owl-prev{
     left: -7%;
+
+    @include mq(small) {
+        left: -5%;
+    }
+
+    @include mq(large) {
+        left: -3%;
+    }
 }
 
 .owl-next, .owl-prev {

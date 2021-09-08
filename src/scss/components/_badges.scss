@@ -1,5 +1,6 @@
 @use '../abstracts/functions' as *;
 @use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
 @use '../base/colors' as *;
 
 .nav-badge {
@@ -28,5 +29,33 @@
     font-weight: 500;
     font-size: rem(13);
     border-radius: rem(5);
+    z-index: 1;
+}
+
+.discount-badge {
+    display: none;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    padding: .2em 1em;
+    background: $clr-success;
+    font-size: rem(12);
+    color: $clr-white;
+    border-radius: $border-radius-2;
+    z-index: 1;
+    @include mq(medium) {
+        display: block;
+    }
+}
+
+.sold-out-badge {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    padding: .2em .5em;
+    font-size: rem(12);
+    color: $clr-white;
+    background: $clr-black;
+    border-radius: $border-radius-2;
     z-index: 1;
 }
