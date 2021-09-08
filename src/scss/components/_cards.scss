@@ -69,7 +69,6 @@
 }
 
 .top-deals__product-card {
-    // width: 150px;
     padding-right: 0.5rem;
     overflow: hidden;
     position: relative;
@@ -88,6 +87,18 @@
     // }
 
     @include hover-zoom;
+    @media (hover) {
+        &-cta {
+            opacity: 0;
+            transform: translateY(rem(10));
+        }
+        &:hover{
+            .top-deals__product-card-cta {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
 
     &-img-wrapper {
         // outline: 1px solid red;
