@@ -67,3 +67,81 @@
         margin-top: 0;
     }
 }
+
+
+.top-deals__product-card {
+    // width: 150px;
+    padding-right: .5rem;
+    overflow: hidden;
+    position: relative;
+    // outline: 1px solid brown;
+    
+    &::before {
+        @include pseudo;
+        right: 0;
+        @include top-50;
+        @include size (rem(1), 85%);
+        background: rgba($clr-gray, .2);
+    }
+
+    // &:last-child::before {
+    //     display: none;
+    // }
+
+    @include hover-zoom;
+
+    &-img-wrapper {
+        // outline: 1px solid red;
+        @include width-min(100%, rem(150));
+        margin: 0 auto;
+        overflow: hidden;
+
+        img {
+            transition: transform .3s;
+            max-height: 100%;
+        }
+    }
+
+    // &-text-content {
+    // }
+
+    &-title {
+            color: $clr-primary;
+            font-size: 1rem;
+            font-weight: 500;
+    }
+
+    &-rating {
+        margin-top: .3rem;
+
+        @include mq(small) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &-stars {
+        display: flex;
+        gap: .05em;
+        // outline: 1px solid orange;
+        white-space: nowrap;
+
+        & * {
+            stroke: $clr-accent;
+            width: rem(15);
+        }
+    }
+
+    &-reviews {
+        color: rgba($clr-gray, .8);
+        font-size: rem(13);
+    }
+
+    &-price{
+        display: inline-block;
+        color:rgba(black, .85);
+        font-weight: 500;
+    }
+
+}
+

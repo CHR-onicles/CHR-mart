@@ -197,6 +197,7 @@
         bottom: rem(0);
         width: 100%;
         background: $clr-white;
+        border-top: 1px solid rgba($clr-gray, .2);
         z-index: 99;
         overflow: hidden;
 

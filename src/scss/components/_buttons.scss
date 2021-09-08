@@ -11,6 +11,7 @@
     white-space: nowrap;
     font-size: rem(13); 
     text-transform: uppercase;
+    text-align: center;
     font-weight: 500;
     letter-spacing: rem(1);
     border-radius: $border-radius-2;
@@ -57,4 +58,48 @@
         background: $clr-white;
         color: $clr-black;
     }
+}
+
+.top-deals__product-card-cta {
+    @extend %button;
+    display: block;
+    padding: .7em 1.5em;
+    margin-top: .5em;
+    background: $clr-accent;
+    font-size: rem(12);
+    border-radius: rem(3);
+}
+
+// Modifying Owl Library buttons
+.owl-next{
+    right: -7%;
+}
+
+.owl-prev{
+    left: -7%;
+}
+
+.owl-next, .owl-prev {
+    border-radius: 50%;
+    @include top-50;
+
+    &:hover{
+        background: none !important;
+    }
+
+    span {
+        background: rgba($clr-gray, .5);
+        border-radius: 50%;
+        font-size: 2rem;
+        padding: .1em .5em;
+        color: rgba($clr-white, .8);
+
+        &:hover{
+            background: mix(white, $clr-gray, 20%) !important;
+        }
+    }
+}
+
+.owl-dots{
+    display: none !important;
 }
