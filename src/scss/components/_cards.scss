@@ -88,10 +88,16 @@
 
     @include hover-zoom;
     @media (hover) {
+
+        &::before {
+            height: 70%;
+        }
+
         &-cta {
             opacity: 0;
             transform: translateY(rem(10));
         }
+
         &:hover{
             .top-deals__product-card-cta {
                 opacity: 1;
