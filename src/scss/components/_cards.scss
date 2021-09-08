@@ -183,6 +183,7 @@
     position: relative;
     // outline: 1px solid red;
     height: rem(150);
+    border-radius: $border-radius-2;
 
     @include hover-zoom;
 

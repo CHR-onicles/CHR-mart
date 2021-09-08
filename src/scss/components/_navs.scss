@@ -124,7 +124,7 @@
         &-item:not(:nth-child(1)) {
             svg { // couldn't use class name because of pseudo-class of parent
                 &:hover {
-                    stroke: $clr-accent-desat;
+                    stroke: $clr-accent;
                 }
             }
         }
@@ -139,7 +139,7 @@
 
             &:hover {
                 .header__middle-nav-icon {
-                    stroke: $clr-accent-desat;
+                    stroke: $clr-accent;
                 }
 
                 .top {
@@ -147,7 +147,7 @@
                 }
 
                 .bottom {
-                    color: $clr-accent-desat;
+                    color: $clr-accent;
                 }
             }
 
