@@ -72,6 +72,7 @@
 
 // Mixin to zoom on images on hover
 @mixin hover-zoom {
+  overflow: hidden;
   &:hover {
     img {
       transform: scale(1.1)

@@ -10,7 +10,6 @@
     color: $clr-white;
     // border: 1px solid red;
     border-radius: $border-radius;
-    overflow: hidden;
 
     @include hover-zoom;
 
@@ -70,7 +69,6 @@
 
 .top-deals__product-card {
     padding-right: 0.5rem;
-    overflow: hidden;
     position: relative;
     // outline: 1px solid brown;
 
@@ -178,4 +176,45 @@
         }
     }
 
+}
+
+
+.top-deals__cat-card {
+    position: relative;
+    // outline: 1px solid red;
+    height: rem(150);
+
+    @include hover-zoom;
+
+    &-img {
+        position: absolute;
+        inset: 0;
+        object-fit: cover;
+        object-position: center;
+        @include size(100%);
+        transition: transform .4s;
+    }
+
+    &-text {
+        position: absolute;
+        @include left-50;
+        bottom: 14%;
+        padding: .7em 2em;
+        font-size: rem(13);
+        font-weight: 500;
+        text-transform: uppercase;
+        white-space: nowrap;
+        background: $clr-white;
+        border-radius: rem(3);
+        z-index: 1;
+    }
+}
+
+.top-deals__cat-card:nth-child(3),
+.top-deals__cat-card:nth-child(6) {
+    height: rem(300);
+
+    .top-deals__cat-card-text {
+        bottom: 7%;
+    }
 }

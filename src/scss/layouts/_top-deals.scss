@@ -4,7 +4,7 @@
 @use '../abstracts/variables' as *;
 
 .top-deals {
-    padding: 1.5rem .2rem;
+    padding: 1.5rem 0.2rem;
     margin-top: 2rem;
     background: $clr-white;
 
@@ -23,14 +23,14 @@
             top: 100%;
             left: 0;
             @include size(100%, rem(1));
-            background: rgba($clr-gray, .2);
+            background: rgba($clr-gray, 0.2);
         }
     }
 
     &__heading {
         width: max-content;
         font-weight: 400;
-        padding: .8em 0 .3em;
+        padding: 0.8em 0 0.3em;
         position: relative;
         // box-shadow: inset 0 rem(-2) $clr-primary; // unexpectedly creates a thin vertical blue trail
 
@@ -47,5 +47,92 @@
     &__product-cards-container {
         margin-top: 1rem;
         // outline: 1px solid;
+    }
+
+    &__cat-cards {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        @include mq(xsmall) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(4, 1fr);
+        }
+
+        @include mq(medium) {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 1fr 1fr;
+        }
+    }
+    &__cat-card:first-child {
+        @include mq(xsmall) {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+
+        @include mq(medium) {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+    }
+    &__cat-card:nth-child(2) {
+        @include mq(xmsall) {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+        }
+
+        @include mq(medium) {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+        }
+    }
+    &__cat-card:nth-child(3) {
+        @include mq(xsmall) {
+            grid-column: 2 / 3;
+            grid-row: 1 / 3;
+            height: rem(300) + 1rem !important; // 1 rem to compensate for gap
+        }
+
+        @include mq(medium) {
+            grid-column: 2 / 3;
+            grid-row: 1 / 3;
+        }
+    }
+    &__cat-card:nth-child(4) {
+        @include mq(xsmall) {
+            grid-column: 1 / 2;
+            grid-row: 3 /4;
+        }
+
+        @include mq(medium) {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
+        }
+    }
+    &__cat-card:nth-child(5) {
+        @include mq(xsmall) {
+            grid-column: 1 / 2;
+            grid-row: 4 / 5;
+        }
+
+        @include mq(medium) {
+            grid-column: 3 /4;
+            grid-row: 2 / 3;
+        }
+    }
+    &__cat-card:last-child {
+        @include mq(xsmall) {
+            grid-column: 2 / 3;
+            grid-row: 3 / 5;
+            row-gap: 0;
+            height: rem(300) + 1rem !important;
+        }
+
+        @include mq(medium) {
+            grid-column: 4 / 5;
+            grid-row: 1 / 3;
+        }
     }
 }
