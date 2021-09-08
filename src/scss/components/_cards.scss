@@ -114,9 +114,9 @@
     &-rating {
         margin-top: .3rem;
 
-        @include mq(small) {
+        @include mq(medium) {
             display: flex;
-            justify-content: space-between;
+            gap: .5em;
         }
     }
 
@@ -141,6 +141,10 @@
         display: inline-block;
         color:rgba(black, .85);
         font-weight: 500;
+
+        @include mq(medium) {
+            margin-top: .8em;
+        }
     }
 
 }
