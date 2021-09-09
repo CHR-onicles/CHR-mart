@@ -7,9 +7,10 @@
     position: absolute;
     top: 120%;
     left: 0;
-    @include width-min(100%, rem(400)); /* TODO: recheck size while device width increases */
+    width: 100%;
     
     @include mq(small) {
+        max-width: rem(400);
         position: relative;
         margin-inline: auto;
         order: 3;
