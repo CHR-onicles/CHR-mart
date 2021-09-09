@@ -113,7 +113,8 @@
         background: rgba($clr-gray, .5);
         border-radius: 50%;
         font-size: 2rem;
-        padding: .1em .5em;
+        // padding: .1em .5em; // I think they too big
+        padding: 0 .4em;
         color: rgba($clr-white, .8);
 
         &:hover{

@@ -50,7 +50,7 @@
         <!-- End Preloader -->
 
         <!-- Header -->
-        <header class="header">
+        <header class="header" role="navigation">
             <!--  nav -->
             <nav class="header__top-nav">
                 <div class="container">
@@ -151,7 +151,7 @@
                             </div>
                         </li>
                         <div class="search-wrapper">
-                            <input class="search-bar" type="text" aria-label="Search for anything" placeholder="I'm shopping for...">
+                            <input class="search-bar" type="text" role="searchbox" aria-label="Search for anything" placeholder="I'm shopping for...">
                             <button class="search-btn" type="button" aria-label="Search Button">
                                 <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><title>Search</title><path d="M221.09,64A157.09,157.09,0,1,0,378.18,221.09,157.1,157.1,0,0,0,221.09,64Z" style="fill:none;stroke-miterlimit:10;stroke-width:32px"/><line x1="338.29" y1="338.29" x2="448" y2="448" style="fill:none;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"/></svg>
                             </button>
@@ -576,12 +576,31 @@
                             </a>
                         </div>
                     </section>
-
-                    <p style="padding-top: 5rem;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora suscipit nam laudantium ipsam ratione ab officia in temporibus fugiat natus expedita consequuntur et voluptatibus sed soluta totam quod dolores fugit, nihil ut accusamus impedit? Provident, dolorem ipsum iusto aliquam nobis odit voluptatem natus quos vitae soluta error, illum in! Nisi?</p>
-
+        
                 </div>
             </section>
             <!-- End Top Deals Of The Day Section -->
+            
+            <!-- Top Featured Products Section -->
+            <section class="top-featured">
+                <div class="container">
+                    
+                    <header class="top-featured__header">
+                        <h2 class="top-featured__heading">Top Featured <span>Products</span></h2>
+                            <ul class="top-featured__cats"> <!-- "cats" is short for categories-->
+                                <li class="top-featured__cat top-featured__cat--active">Cellphones</li>
+                                <li class="top-featured__cat">Speakers</li>
+                                <li class="top-featured__cat">Computers</li>
+                                <li class="top-featured__cat">Gamepads</li>
+                                <li class="top-featured__cat">Accessories</li>
+                            </ul>
+                    </header>
+                    
+                </div>
+            </section>
+            <!-- End Top Featured Products Section -->
+            
+            <p style="padding-top: 5rem;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora suscipit nam laudantium ipsam ratione ab officia in temporibus fugiat natus expedita consequuntur et voluptatibus sed soluta totam quod dolores fugit, nihil ut accusamus impedit? Provident, dolorem ipsum iusto aliquam nobis odit voluptatem natus quos vitae soluta error, illum in! Nisi?</p>
 
         </main>
         <!-- End Main -->
