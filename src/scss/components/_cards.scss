@@ -65,7 +65,7 @@
     }
 }
 
-.top-deals__product-card {
+.product-card {
     padding-right: 0.5rem;
     position: relative;
     // outline: 1px solid brown;
@@ -95,7 +95,7 @@
         }
 
         &:hover{
-            .top-deals__product-card-cta {
+            .product-card-cta {
                 opacity: 1;
                 transform: translateY(0);
             }
