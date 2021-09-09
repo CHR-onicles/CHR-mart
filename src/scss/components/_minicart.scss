@@ -1,0 +1,32 @@
+@use '../base/colors' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/variables' as *;
+
+.header__middle-nav-menu-minicart {
+    position: absolute;
+    top: calc(100% + 1em);
+    right: 0;
+    width: rem(350);
+    height: 0;
+    overflow: hidden;
+    background: mix(white, $clr-gray, 95%);
+    border-radius: $border-radius-2;
+    z-index: 11;
+    transform: translateY(rem(10));
+    opacity: 0;
+    transition: transform .3s cubic-bezier(0, 0.85, 0.74, 1), opacity .3s cubic-bezier(0, 0.85, 0.74, 1);
+
+    .title {
+        display: block;
+        font-weight: 500;
+        padding: 1em 0 1em 2em;
+        background: mix(white, $clr-gray, 80%);
+    }
+
+    .content {
+        min-height: rem(100);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

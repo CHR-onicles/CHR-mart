@@ -8,6 +8,21 @@
     top: 120%;
     left: 0;
     @include width-min(100%, rem(400)); /* TODO: recheck size while device width increases */
+    
+    @include mq(small) {
+        position: relative;
+        margin-inline: auto;
+        order: 3;
+    }
+
+    @include mq(medium) {
+        max-width: rem(350);
+        margin-left: .7em;
+    }
+
+    @include mq(large) {
+        @include width-min(40vw, rem(560));
+    }
 
     .search-bar {
         padding: 0.8em 4em 0.8em 1.5em;
@@ -29,6 +44,11 @@
         background: $clr-accent;
         border-top-right-radius: $border-radius-2;
         border-bottom-right-radius: $border-radius-2;
+        cursor: pointer;
+
+        &:hover {
+            background: mix(black, $clr-accent, 3%);
+        }
     }
 
     .search-icon {
@@ -36,9 +56,4 @@
         stroke: $clr-black;
     }
 
-    @include mq(small) {
-        position: relative;
-        margin-inline: auto;
-        order: 2;
-    }
 }
