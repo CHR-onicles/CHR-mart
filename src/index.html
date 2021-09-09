@@ -353,7 +353,7 @@
                         </div>
                     </header>
 
-                    <section class="top-deals__product-cards-container owl-carousel owl-theme">
+                    <section class="top-deals__product-cards owl-carousel owl-theme">
                         <div class="top-deals__product-card">
                             <span class="discount-badge">-20%</span>
                             <div class="top-deals__product-card-img-wrapper">
@@ -595,6 +595,39 @@
                                 <li class="top-featured__cat">Accessories</li>
                             </ul>
                     </header>
+
+                    <div class="top-featured__cards-container">
+                        <div class="top-featured__top-cards owl-carousel owl-theme">
+                            <div class="top-featured__top-product-card">
+                                <span class="hot-badge">HOT</span>
+                                <div class="top-featured__product-card-img-wrapper">
+                                    <img loading="lazy" src="../assets/products/product-9.webp" alt="Product image" />
+                                </div>
+                                <div class="top-featured__product-card-text-content">
+                                    <h3 class="top-featured__product-card-title">Huawei Note 5 Pro 4GB RAM, 128GB</h3>
+                                    <div class="top-featured__product-card-rating">
+                                        <div class="top-featured__product-card-stars" aria-label="4 star rating">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><path d="M480,208H308L256,48,204,208H32l140,96L118,464,256,364,394,464,340,304Z" style="fill:none;stroke-linejoin:round;stroke-width:32px"/></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><path d="M480,208H308L256,48,204,208H32l140,96L118,464,256,364,394,464,340,304Z" style="fill:none;stroke-linejoin:round;stroke-width:32px"/></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><path d="M480,208H308L256,48,204,208H32l140,96L118,464,256,364,394,464,340,304Z" style="fill:none;stroke-linejoin:round;stroke-width:32px"/></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><path d="M480,208H308L256,48,204,208H32l140,96L118,464,256,364,394,464,340,304Z" style="fill:none;stroke-linejoin:round;stroke-width:32px"/></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><path d="M480,208H308L256,48,204,208H32l140,96L118,464,256,364,394,464,340,304Z" style="fill:none;stroke:lightgrey;stroke-linejoin:round;stroke-width:32px"/></svg>
+                                        </div>
+                                        <span class="top-featured__product-card-reviews">(02 reviews)</span>
+                                    </div>
+                                    <div class="top-featured__product-card-price-wrapper">
+                                        <span class="top-featured__product-card-price--new">$111.02</span>
+                                        <span class="top-featured__product-card-price--discount">$139.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="top-featured__bottom-cards">
+
+                        </div>
+                    </div>
                     
                 </div>
             </section>
@@ -612,7 +645,7 @@
         <!-- Owl Library setup -->
         <script>
             $(document).ready(function () {
-                $(".owl-carousel").owlCarousel({
+                $(".owl-carousel, .top-deals__product-cards").owlCarousel({
                     loop: false,
                     margin: 7,
                     nav: true,
@@ -631,6 +664,23 @@
                         },
                         1200: {
                             items: 6,
+                        }
+                    },
+                });
+
+                $(".owl-carousel, .top-featured__top-cards, .top-featured__bottom-cards").owlCarousel({
+                    loop: false,
+                    margin: 16,
+                    nav: true,
+                    responsive: {
+                        0: {
+                            items: 1,
+                        },
+                        568: {
+                            items: 2,
+                        },
+                        1024: {
+                            items: 3,
                         }
                     },
                 });

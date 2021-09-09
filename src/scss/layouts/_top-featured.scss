@@ -1,0 +1,52 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../base/colors' as *;
+
+.top-featured {
+    margin-top: 3rem;
+
+    &__header {
+        position: relative;
+
+        &::before {
+            @include pseudo;
+            top: 100%;
+            left: 0;
+            @include size(100%, rem(1));
+            background: rgba($clr-gray, .15);
+        }
+    }
+    
+    &__heading {
+        font-weight: 500;
+        text-align: center;
+        span {
+            font-weight: 300;
+        }
+    }
+
+    &__cats {
+        display: flex;
+        width: 100%;
+        margin-top: .8em;
+        overflow-x: scroll;
+        // outline: 1px solid;
+        
+        @include mq(xsmall) {
+            width: max-content;
+            margin-inline: auto;
+            overflow-x: auto;
+        }
+    }
+
+    &__cat {
+        font-size: rem(14);
+        padding: 0.2em .5em;
+    }
+
+    &__cat--active {
+        color: $clr-primary;
+        font-weight: 500;
+    }
+}

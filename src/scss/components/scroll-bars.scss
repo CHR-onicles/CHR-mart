@@ -13,3 +13,9 @@ body{
     background-clip: content-box;
     border-radius: 20px;
 }
+
+.top-featured__cats {
+    &::-webkit-scrollbar {
+        height: 10px; //partially hidden by overflow: hidden of parent...but it's all good
+    }
+}
