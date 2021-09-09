@@ -5,10 +5,9 @@
 
 .hero__f-card {
     position: relative;
-    width: 100%; /*TODO: alter on big screen */
+    width: 100%;
     min-height: rem(170);
     color: $clr-white;
-    // border: 1px solid red;
     border-radius: $border-radius;
 
     @include hover-zoom;
@@ -27,7 +26,6 @@
         flex-direction: column;
         position: absolute;
         inset: 15% 10%;
-        // border: 1px solid red;
     }
 
     &-heading {
