@@ -1,0 +1,19 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/colors' as *;
+
+.top-selling {
+    margin-top: 3rem;
+    background: $clr-white;
+    
+    &__cat-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        
+        @include mq(small) {
+            flex-direction: row;
+        }
+    }
+
+}

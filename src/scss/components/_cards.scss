@@ -316,3 +316,42 @@
     }
 }
 
+.top-selling__cat-card {
+    position: relative;
+    @include size(100%, rem(180));
+    border-radius: $border-radius-2;
+
+    @include hover-zoom;
+
+    img {
+        position: absolute;
+        inset: 0;
+        @include size(100%);
+        transition: transform .4s;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &-text-content {
+        position: absolute;
+        @include top-50;
+        left: 10%;
+        width: 80%;
+        color: $clr-white;
+        // outline: 1px solid orange;
+    }
+
+    &-desc {
+        color: $clr-accent;
+    }
+
+    &-title {
+        font-weight: 500;
+        font-size: rem(22);
+    }
+
+    &-text {
+        margin-top: 1.5em;
+        font-size: rem(15);
+    }
+}
