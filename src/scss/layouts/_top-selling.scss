@@ -1,9 +1,11 @@
 @use '../abstracts/functions' as *;
 @use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
 @use '../base/colors' as *;
 
 .top-selling {
     margin-top: 3rem;
+    padding-bottom: 1em;
     background: $clr-white;
     
     &__cat-cards {
@@ -14,6 +16,53 @@
         @include mq(small) {
             flex-direction: row;
         }
+    }
+
+    &__header {
+        margin-top: 2.5rem;
+        display: flex;
+        flex-direction: column-reverse;
+        position: relative;
+
+        @include mq(small) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        &::before {
+            @include pseudo;
+            top: 100%;
+            @include size(100%, rem(1));
+            background: rgba($clr-gray, .2);
+        }
+    }
+
+    &__heading {
+        font-weight: 400;
+        position: relative;
+        padding: .2em 0;
+        width: max-content;
+
+        &::before {
+            @include pseudo;
+            top: 100%;
+            left: 0;
+            @include size(100%, rem(3));
+            background: $clr-primary;
+            border-radius: $border-radius-2;
+        }
+    }
+
+    &__link {
+        font-size: rem(14);
+
+        &:hover {
+            color: $clr-accent-hover;
+        }
+    }
+
+    &__product-cards {
+        margin-top: .5em;
     }
 
 }

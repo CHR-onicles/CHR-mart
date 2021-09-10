@@ -133,7 +133,8 @@
 }
 
 .top-featured__top-cards,
-.top-featured__bottom-cards {
+.top-featured__bottom-cards,
+.top-selling__product-cards {
     .owl-next {
         right: -6%;
         @include mq(xsmall) {
