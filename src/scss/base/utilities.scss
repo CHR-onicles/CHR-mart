@@ -104,6 +104,32 @@
         opacity: 1;
     }
 }
+
+@keyframes marquee {
+    to {
+        transform: translateX(-600%);
+    }
+}
+@keyframes marquee-2 {
+    to {
+        transform: translateX(-350%);
+    }
+}
+@keyframes marquee-3 {
+    to {
+        transform: translateX(-250%);
+    }
+}
+@keyframes marquee-4 {
+    to {
+        transform: translateX(-190%);
+    }
+}
+@keyframes marquee-5 {
+    to {
+        transform: translateX(-165%);
+    }
+}
 //-------------------------
 //  End Animations
 // ------------------------

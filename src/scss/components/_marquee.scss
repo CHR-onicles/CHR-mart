@@ -1,0 +1,48 @@
+@use '../base/colors' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+
+.marquee {
+    height: rem(50);
+    margin-top: 2rem;
+    background: $clr-primary;
+    color: $clr-white;
+
+    .container {
+        height: 100%;
+        // outline: 1px solid green;
+        overflow-x: hidden;
+    }
+    
+    &__content {
+        display: flex;
+        align-items: center;
+        gap: 10rem;
+        @include size(100%);
+        transform: translateX(120%);
+        animation: marquee 28s 1s linear backwards infinite;
+        
+        @include mq(xsmall) {
+            transform: translateX(100%);
+            animation-name: marquee-2;
+            animation-duration: 30s;
+        }
+
+        @include mq(small) {
+            animation-name: marquee-3;
+        }
+
+        @include mq(medium) {
+            animation-name: marquee-4;
+        }
+
+        @include mq(large) {
+            animation-name: marquee-5;
+        }
+    }
+
+    &__text {
+        display: inline;
+        white-space: nowrap;
+    }
+}

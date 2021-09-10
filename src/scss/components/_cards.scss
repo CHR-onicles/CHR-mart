@@ -152,6 +152,10 @@
         font-size: rem(13);
     }
 
+    &-price-wrapper {
+        white-space: nowrap;
+    }
+
     &-price {
         display: inline-block;
         color: rgba(black, 0.85);
