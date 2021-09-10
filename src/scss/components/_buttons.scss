@@ -126,3 +126,28 @@
 .owl-dots{
     display: none !important;
 }
+
+.top-featured__top-cards,
+.top-featured__bottom-cards {
+    .owl-next {
+        right: -6%;
+        @include mq(xsmall) {
+            right: -5%;
+        }
+
+        @include mq(small) {
+            right: -3.5%;
+        }
+    }
+
+    .owl-prev {
+        left: -6%;
+        @include mq(xsmall) {
+            left: -5%;
+        }
+
+        @include mq(small) {
+            left: -3.5%;
+        }
+    }
+}
