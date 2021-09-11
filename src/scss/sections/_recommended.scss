@@ -3,26 +3,15 @@
 @use '../abstracts/variables' as *;
 @use '../base/colors' as *;
 
-.top-selling {
-    margin-top: 3rem;
-    padding-bottom: 1em;
+.recommended {
     background: $clr-white;
-    
-    &__cat-cards {
-        display: flex;
-        flex-direction: column;
-        gap: 1em;
-        
-        @include mq(small) {
-            flex-direction: row;
-        }
-    }
+    padding: 3rem 0;
 
     &__header {
-        margin-top: 2.5rem;
         display: flex;
         flex-direction: column-reverse;
         position: relative;
+        // outline: 1px solid orange;
 
         @include mq(small) {
             flex-direction: row;
@@ -32,15 +21,17 @@
         &::before {
             @include pseudo;
             top: 100%;
+            left: 0;
             @include size(100%, rem(1));
-            background: rgba($clr-gray, .2);
+            background: rgba($clr-gray, .15);
         }
+    
     }
 
     &__heading {
-        font-weight: 400;
         position: relative;
         padding: .2em 0;
+        font-weight: 300;
         width: max-content;
 
         &::before {
@@ -51,6 +42,10 @@
             background: $clr-primary;
             border-radius: $border-radius-2;
         }
+
+        span {
+            font-weight: 500;
+        }
     }
 
     &__link {
@@ -59,10 +54,6 @@
         &:hover {
             color: $clr-accent-hover;
         }
-    }
-
-    &__product-cards {
-        margin-top: .5em;
     }
 
 }
