@@ -134,7 +134,8 @@
 
 .top-featured__top-cards,
 .top-featured__bottom-cards,
-.top-selling__product-cards {
+.top-selling__product-cards,
+.recommended__cards {
     .owl-next {
         right: -6%;
         @include mq(xsmall) {

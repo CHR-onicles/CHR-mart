@@ -18,7 +18,8 @@
     }
 }
 
-.hero__f-card-badge {
+.hero__f-card-badge,
+.hero__f-card-badge--left {
     position: absolute;
     top: 10%;
     @include left-50;
@@ -28,8 +29,15 @@
     text-transform: uppercase;
     font-weight: 500;
     font-size: rem(13);
-    border-radius: rem(5);
+    border-radius: $border-radius-2;
     z-index: 1;
+}
+
+.hero__f-card-badge--left {
+    top: 5%;
+    left: 5%;
+    transform: translateX(0);
+    border-radius: rem(3);
 }
 
 .discount-badge,
