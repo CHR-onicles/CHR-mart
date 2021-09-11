@@ -78,10 +78,6 @@
         background: rgba($clr-gray, 0.2);
     }
 
-    // &:last-child::before {
-    //     display: none;
-    // }
-
     @include hover-zoom;
     @media (hover) {
 

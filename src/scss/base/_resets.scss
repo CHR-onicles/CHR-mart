@@ -61,3 +61,9 @@ ul, ol {
         transition-delay: 0s !important;
     }
 }
+
+// To override the height attribute of image tags
+// and make the image dynamically sized
+.owl-carousel .owl-item img {
+    height: 100%;
+}
