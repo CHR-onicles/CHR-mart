@@ -132,12 +132,30 @@
     margin: 0 !important;
 }
 
+.top-deals__product-cards,
 .top-featured__top-cards,
 .top-featured__bottom-cards,
 .top-selling__product-cards,
 .recommended__cards {
+    
+    @media (hover) {
+        .owl-next, 
+        .owl-prev {
+            opacity: 0 !important;
+            transition: opacity .3s;
+        } 
+
+        &:hover {
+            .owl-next,
+            .owl-prev {
+                opacity: 1 !important;
+            }
+        }
+    }
+
     .owl-next {
         right: -6%;
+
         @include mq(xsmall) {
             right: -5%;
         }
@@ -145,16 +163,25 @@
         @include mq(small) {
             right: -3.5%;
         }
+
+        @include mq(medium) {
+            right: -2.5%;
+        }
     }
 
     .owl-prev {
         left: -6%;
+        
         @include mq(xsmall) {
             left: -5%;
         }
 
         @include mq(small) {
             left: -3.5%;
+        }
+
+        @include mq(medium) {
+            left: -2.5%;
         }
     }
 }
