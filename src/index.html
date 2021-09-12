@@ -749,7 +749,7 @@
                                     <img loading="lazy" width="150" height="150" src="../assets/products/product-14.webp" alt="Product image" />
                                 </div>
                                 <div class="product-card-text-content">
-                                    <h3 class="product-card-title">Pink Xbox Controller</h3>
+                                    <h3 class="product-card-title">Pink Xbox Wireless Controller</h3>
                                     <div class="product-card-rating">
                                         <div class="product-card-stars" aria-label="5 star rating">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><path d="M480,208H308L256,48,204,208H32l140,96L118,464,256,364,394,464,340,304Z" style="fill:none;stroke-linejoin:round;stroke-width:32px"/></svg>
@@ -1107,7 +1107,7 @@
                             <div class="recommended__card-img-wrapper">
                                 <img src="../assets/blogs/blog-2.webp" loading="lazy" width="288" height="180" alt="Brown happy dog on fallen tree trunk">
                             </div>
-                            <h3 class="recommended__card-title">Capture the moment with 4 Cameras on the Oppo A92</h3>
+                            <h3 class="recommended__card-title">Capture the moment with all 5 Cameras on the Infinix HOT 10 Pro</h3>
                             <p class="recommended__card-author">POST BY <a href="#">ADMIN</a></p>
                             <div class="recommended__card-footer">
                                 <a href="#">Read More</a>
@@ -1172,6 +1172,34 @@
                 </div>
             </section>
             <!-- End Recommended For You Section -->
+
+            <section class="brands">
+                <div class="container">
+                    <div class="brands__cards owl-carousel owl-theme">
+                        <div class="brands__card">
+                            <img src="../assets/brands/brand-1.jpg" alt="Brand 1's logo">
+                        </div>
+                        <div class="brands__card">
+                            <img src="../assets/brands/brand-2.png" alt="Walmart's Logo">
+                        </div>
+                        <div class="brands__card">
+                            <img src="../assets/brands/brand-3.jpg" alt="Brand 3's logo">
+                        </div>
+                        <div class="brands__card">
+                            <img src="../assets/brands/brand-4.jpg" alt="Brand 4's logo">
+                        </div>
+                        <div class="brands__card">
+                            <img src="../assets/brands/brand-5.jpg" alt="Brand 5's logo">
+                        </div>
+                        <div class="brands__card">
+                            <img src="../assets/brands/brand-6.jpg" alt="Brand 6's logo">
+                        </div>
+                        <div class="brands__card">
+                            <img src="../assets/brands/brand-7.png" alt="Bestbuy's logo">
+                        </div>
+                    </div>
+                </div>
+            </section>
             
         </main>
         <!-- End Main -->
@@ -1242,6 +1270,33 @@
                         }
                     },
                 });
+
+                $(".brands__cards").owlCarousel({
+                    loop: true,
+                    margin: 20,
+                    nav: true,
+                    autoplay: true,
+                    autoplayTimeout: 5000,
+                    autoplayHoverPause: true,
+                    responsive: {
+                        0: {
+                            items: 2,
+                        },
+                        568: {
+                            items: 3,
+                        },
+                        768: {
+                            items: 4,
+                        },
+                        1024: {
+                            items: 5,
+                        },
+                        1200: {
+                            items: 6,
+                        }
+                    },
+                });
+
             });
         </script>
         <!-- End Owl Library setup -->

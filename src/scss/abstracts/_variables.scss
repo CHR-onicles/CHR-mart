@@ -5,7 +5,7 @@
 
 // CSS Variables (to be modified later)
 :root {
-  --max-width: 71.25rem; // for utility container
+  --max-width: 73.75rem; // 1180px for utility container
 }
 
 // Sass Variables (no modification)
@@ -20,5 +20,5 @@ $breakpoints-up: (
   "medium": 62em, // 992px (or 1024 if needed)
   "large": 75em, // 1200px
   "xlarge": 90em, // 1440px
-  "max": 160em // 2560px
+  "max": 93.75em // 1500px
 );

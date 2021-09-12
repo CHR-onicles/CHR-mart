@@ -53,7 +53,7 @@
 
 // Mixin for using min() with width - Sass throws an error when I use 2 different units
 // Same as `width: min(width, max-width)`
-@mixin width-min($width, $max-width) {
+@mixin width-min($width, $max-width: $width) {
   width: $width;
   max-width: $max-width;
 }

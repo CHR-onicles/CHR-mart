@@ -2,11 +2,17 @@
 // This file contains CSS helper classes.
 // -----------------------------------------------------------------------------
 @use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 .container {
     width: 90%;
     max-width: var(--max-width);
     margin: 0 auto;
+
+    @include mq(max) {
+        --max-width: 90rem;
+        max-width: var(--max-width);
+    }
 }
 
 .row {

@@ -199,6 +199,12 @@
             @include mq(xsmall) {
                 padding: .8em 0;
             }
+
+            @include mq(large) {
+                margin-right: 2em; // to shorten the titles
+                word-wrap: break-word;
+                // outline: 1px solid red;
+            }
         }
 
         .product-card-reviews {
@@ -237,6 +243,11 @@
                 }
             }
 
+            .product-card-text-content {
+                @include width-min(100% !important);
+                margin-right: 0;
+            }
+
             .info {
                 display: none;
                 margin-top: .5em;
@@ -269,7 +280,6 @@
     }
 
 }
-
 
 .top-deals__cat-card {
     position: relative;
@@ -407,5 +417,16 @@
         span {
             color: rgba($clr-gray, .8);
         }
+    }
+}
+
+.brands__card {
+    // outline: 1px solid red;
+    @include width-min(100%, rem(170));
+    max-height: rem(40);
+
+    img {
+        @include size(100%);
+        object-fit: cover;
     }
 }

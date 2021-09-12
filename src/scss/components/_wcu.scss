@@ -32,6 +32,10 @@
             display: flex;
             padding-left: .9rem;
         }
+
+        @include mq(max) {
+            padding-block: 1.5rem; 
+        }
     }
 
     &__reason {

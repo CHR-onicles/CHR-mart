@@ -4,8 +4,7 @@
 @use '../base/colors' as *;
 
 .top-selling {
-    margin-top: 3rem;
-    padding-bottom: 1em;
+    padding: 3rem 0 1rem;
     background: $clr-white;
     
     &__cat-cards {

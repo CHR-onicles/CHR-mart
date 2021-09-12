@@ -1,0 +1,10 @@
+@use '../base/colors' as *;
+
+.brands {
+    background: $clr-white;
+    
+    &__cards{
+        padding: 1.5rem 0;
+        border-top: 1px solid rgba($clr-gray, .2);
+    }
+}
