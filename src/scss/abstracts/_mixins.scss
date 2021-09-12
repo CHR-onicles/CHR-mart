@@ -2,6 +2,7 @@
 // This file contains all application-wide Sass mixins.
 // -----------------------------------------------------------------------------
 @use '../abstracts/variables' as *;
+@use '../base/colors' as *;
 
 // Ultimate centering of flex children elements
 @mixin flex-center {
@@ -77,5 +78,16 @@
     img {
       transform: scale(1.1)
     }
+  }
+}
+
+// Mixin to shift element to the right on hover 
+@mixin hover-right-shift {
+  transform: translateX(0);
+  transition: transform .3s cubic-bezier(0, 0.85, 0.74, 1);
+
+    &:hover {
+      transform: translateX(10%);
+      color: $clr-accent-hover;
   }
 }

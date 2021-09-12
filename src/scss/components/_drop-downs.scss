@@ -21,13 +21,7 @@
         
         &-item {
             padding: .2em 0;
-            transform: translateX(0);
-            transition: transform .3s cubic-bezier(0, 0.85, 0.74, 1);
-            
-            &:hover {
-                transform: translateX(10%);
-                color: $clr-accent-hover;
-            }
+            @include hover-right-shift;
         }
     }
     

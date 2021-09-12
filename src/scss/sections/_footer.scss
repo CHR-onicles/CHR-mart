@@ -1,3 +1,85 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
+@use '../base/colors' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+.footer {
+    padding: 3rem 0;
+    background: $clr-primary;
+    color: $clr-white;
+
+    &__col {
+
+        &-item {
+            padding: .3em 0;
+            width: max-content;
+            
+            a {
+                display: inline-block;
+                width: 100%;
+                color: $clr-primary-v-light;
+                font-size: rem(14);
+                @include hover-right-shift;
+
+            }
+        }
+    }
+
+    &__col:not(:nth-child(1)) {
+        .footer__heading {
+            padding-top: 1.6em;
+        }
+    }
+    
+    &__heading {
+        font-size: rem(18);
+        font-weight: 500;
+        padding-bottom: .8rem;
+    }
+
+    .newsletter-desc,
+    .privacy-policy {
+        font-size: rem(14);
+        color: $clr-primary-v-light;
+    }
+
+    .privacy-policy {
+        span {
+            text-decoration: underline;
+            font-style: italic;
+        }
+    }
+
+    &__email-wrapper {
+        position: relative;
+        padding: 1rem 0;
+    }
+
+    &__email {
+        background: $clr-white;
+        color: $clr-gray;
+        padding: 1em 1.2em;
+        border-top-left-radius: $border-radius-2;
+        border-bottom-left-radius: $border-radius-2;
+    }
+    
+    &__email-btn {
+        position: absolute;
+        background: $clr-accent;
+        padding: 1em 1.2em;
+        text-transform: uppercase;
+        font-weight: 500;
+        border-top-right-radius: $border-radius-2;
+        border-bottom-right-radius: $border-radius-2;
+        cursor: pointer;
+        transition: background-color .2s;
+
+        &:hover {
+            background: mix(black, $clr-accent, 10%);
+        }
+    }
+
+}
