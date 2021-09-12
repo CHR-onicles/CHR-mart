@@ -7,8 +7,9 @@
 @use '../abstracts/variables' as *;
 
 .footer {
-    padding: 3rem 0;
+    padding-top: 3rem;
     background: $clr-primary;
+    font-size: rem(14);
     color: $clr-white;
 
     &__col {
@@ -53,32 +54,39 @@
         }
     }
 
-    &__email-wrapper {
-        position: relative;
-        padding: 1rem 0;
-    }
+    &__middle-section {
+        padding-top: 2rem;
+        margin-top: 3rem;
+        border-top: 1px solid rgba($clr-primary-v-light, .3);
+        
+        .copyright {
+            padding-top: .6em;
+            text-align: center;
+            color: $clr-primary-v-light;
+            
+            span {
+                color: $clr-white;
+                font-weight: 500;
+            }
+        }
+    } 
 
-    &__email {
-        background: $clr-white;
-        color: $clr-gray;
-        padding: 1em 1.2em;
-        border-top-left-radius: $border-radius-2;
-        border-bottom-left-radius: $border-radius-2;
+    &__payments-wrapper {
+        @include flex-center;
     }
     
-    &__email-btn {
-        position: absolute;
-        background: $clr-accent;
-        padding: 1em 1.2em;
-        text-transform: uppercase;
-        font-weight: 500;
-        border-top-right-radius: $border-radius-2;
-        border-bottom-right-radius: $border-radius-2;
-        cursor: pointer;
-        transition: background-color .2s;
+    &__bottom-section {
+        background: $clr-primary-dark;
+        padding: 1rem 0;
+        margin-top: 1rem;
+        color: $clr-primary-v-light;
+        text-align: center; 
 
-        &:hover {
-            background: mix(black, $clr-accent, 10%);
+        a {
+            color: $clr-white;
+            &:hover {
+                color: $clr-accent-hover;
+            }
         }
     }
 

@@ -1,0 +1,44 @@
+@use '../base/colors' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.footer {
+
+    &__email-wrapper {
+        position: relative;
+        padding: 1rem 0;
+        
+        @include mq(xsmall) {
+            @include width-min(70%, rem(300));
+        }
+    }
+    
+    &__email {
+        background: $clr-white;
+        color: $clr-gray;
+        padding: 1.2em .5em 1.2em 1em;
+        border-radius: $border-radius-2;
+        
+        @include mq(xsmall) {
+            width: 100%;
+        }
+    }
+    
+    &__email-btn {
+        position: absolute;
+        right: 0;
+        background: $clr-accent;
+        padding: 1.2em 1.8em;
+        text-transform: uppercase;
+        font-weight: 500;
+        cursor: pointer;
+        border-top-right-radius: $border-radius-2;
+        border-bottom-right-radius: $border-radius-2;
+        transition: background-color .2s;
+
+
+        &:hover {
+            background: mix(black, $clr-accent, 10%);
+        }
+    }
+}
