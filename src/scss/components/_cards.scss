@@ -112,7 +112,6 @@
 
         &-btn {
             @include flex-center;
-            position: relative;
             background: rgba($clr-gray, 0.1);
             @include size(rem(35));
             cursor: pointer;
