@@ -3,7 +3,8 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
-.header__middle-nav-menu-minicart {
+.header__middle-nav-menu-minicart, 
+.header__middle-nav-menu-minicart--wishlist {
     display: none;
     position: absolute;
     top: calc(100% + 1em);

@@ -132,6 +132,14 @@
 
         &-item:nth-child(4) {
             order: 5;
+
+            &:hover {
+                .header__middle-nav-menu-minicart--wishlist {
+                    height: auto;
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
         }
 
         &-item:nth-child(5) {

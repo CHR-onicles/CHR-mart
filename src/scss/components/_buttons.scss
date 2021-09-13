@@ -119,7 +119,7 @@
         color: rgba($clr-white, 0.8);
 
         &:hover {
-            background: mix(white, $clr-gray, 20%) !important;
+            background: $clr-accent-hover !important;
         }
     }
 }
