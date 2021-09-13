@@ -91,11 +91,45 @@
         }
 
         &:hover{
-            .product-card-cta {
+            .product-card-cta,
+            .product-card-extra-options-btn {
                 opacity: 1;
                 transform: translateY(0);
             }
+
+            .product-card-extra-options-btn {
+                opacity: 1;
+            }
         }
+    }
+
+    &-extra-options {
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        z-index: 2;
+        // outline: 1px solid brown;
+
+        &-btn {
+            @include flex-center;
+            position: relative;
+            background: rgba($clr-gray, 0.1);
+            @include size(rem(35));
+            cursor: pointer;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity .2s ease-out;
+
+            &:hover {
+                background: $clr-accent-hover;
+            }
+        }
+
+        &-icon {
+            stroke: $clr-black;
+            width: rem(18);
+        }
+
     }
 
     &-img-wrapper {
