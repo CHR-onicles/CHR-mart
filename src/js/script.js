@@ -3,7 +3,12 @@ const preloader = document.querySelector(".preloader");
 const slide_nav_btns = document.querySelectorAll(".nav-btn");
 const slides = document.querySelectorAll(".hero__slide");
 const top_feat_cats = document.querySelectorAll(".top-featured__cat");
-
+const countdown_items = [
+    document.querySelector(".days-amount"),
+    document.querySelector(".hours-amount"),
+    document.querySelector(".minutes-amount"),
+    document.querySelector(".seconds-amount"),
+];
 
 /* -------------------------
 Functions
@@ -107,4 +112,48 @@ window.addEventListener("load", () => {
         });
     });
 
+    // Function to get Remaining Time for Countdown Timer
+    // Had to bring it in here because of scoping issues
+    function getRemainingTime() {
+        const today = new Date().getTime();
+        const difference = future_date_in_ms - today;
+
+        // Time values in milliseconds
+        const one_day = 24 * 60 * 60 * 1000;
+        const one_hour = 60 * 60 * 1000;
+        const one_minute = 60 * 1000;
+
+        let days = Math.floor(difference / one_day);
+        let hours = Math.floor((difference % one_day) / one_hour);
+        let minutes = Math.floor((difference % one_hour) / one_minute);
+        let seconds = Math.floor((difference % one_minute) / 1000);
+        console.log(days, hours, minutes, seconds);
+
+        const values = [days, hours, minutes, seconds];
+        countdown_items.forEach((item, index) => {
+            item.textContent = String(values[index]).padStart(2, "0");
+        });
+
+        if (difference < 0) {
+            clearInterval(countdown);
+            countdown_items.forEach((item) => {
+                item.textContent = "00";
+            });
+        }
+    }
+
+    const temp_date = new Date();
+    const temp_year = temp_date.getFullYear();
+    const temp_month = temp_date.getMonth();
+    const temp_day = temp_date.getDate();
+    const temp_hours = temp_date.getHours();
+    const temp_mins = temp_date.getMinutes();
+    const future_date = new Date(temp_year, temp_month, temp_day+3, temp_hours, temp_mins, 0);
+    // console.log(future_date)
+
+    // Convert future date to ms
+    const future_date_in_ms = future_date.getTime();
+
+    let countdown = setInterval(getRemainingTime, 1000);
+    getRemainingTime(); // important to invoke function after setInterval in order to have access to the countdown variable
 });

@@ -37,7 +37,9 @@
         }
 
         [class*="amount"] {
+            display: inline-block;
             color: $clr-white;
+            min-width: 2ch;
         }
 
         [class*="text"] {

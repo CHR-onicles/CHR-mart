@@ -20,10 +20,7 @@
         color: $clr-gray;
         padding: 1.2em .5em 1.2em 1em;
         border-radius: $border-radius-2;
-        
-        @include mq(xsmall) {
-            width: 100%;
-        }
+        width: 100%;
     }
     
     &__email-btn {
