@@ -12,6 +12,20 @@
     font-size: rem(14);
     color: $clr-white;
 
+    &__top-section {
+        @include mq(xsmall) {
+            display: grid;
+            gap: 1.5em;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr 1fr;
+        }
+
+        @include mq(medium) {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 1fr .6fr;
+        }
+    }
+
     &__col {
 
         &-item {
@@ -32,6 +46,60 @@
     &__col:not(:nth-child(1)) {
         .footer__heading {
             padding-top: 1.6em;
+
+            @include mq(xsmall) {
+                padding-top: 0;
+            }
+        }
+    }
+
+    &__col:first-child {
+        @include mq(xsmall) {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+    }
+
+    &__col:nth-child(2) {
+        @include mq(xsmall) {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+        }
+    }
+
+    &__col:nth-child(3) {
+        @include mq(xsmall) {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
+        }
+    }
+
+    &__col:nth-child(4) {
+        @include mq(xsmall) {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+        }
+
+        @include mq(medium) {
+            grid-column: 4 / 5;
+            grid-row: 1 / 2;
+        }
+    }
+    
+    &__col:last-child {
+        // outline: 1px solid red;
+        
+        @include mq(xsmall) {
+            grid-column: 2 / 4;
+            grid-row: 2 / 3;
+        }
+        
+        @include mq(medium) {
+            grid-column: 1 / 5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            // outline: 1px solid black;
         }
     }
     

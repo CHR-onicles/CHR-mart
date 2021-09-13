@@ -1,6 +1,7 @@
 @use '../base/colors' as *;
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
+@use '../abstracts/functions' as *;
 
 .footer {
 
@@ -9,7 +10,8 @@
         padding: 1rem 0;
         
         @include mq(xsmall) {
-            @include width-min(70%, rem(300));
+            @include width-min(100%, rem(400));
+            // outline: 2px solid limegreen;
         }
     }
     
