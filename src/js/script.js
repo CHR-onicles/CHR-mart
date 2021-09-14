@@ -9,11 +9,25 @@ const countdown_items = [
     document.querySelector(".minutes-amount"),
     document.querySelector(".seconds-amount"),
 ];
+const menu_btns = [
+    document.getElementById("bottom-nav-menu-btn"),
+    document.getElementById("middle-nav-menu-btn"),
+];
+const sidebar = document.querySelector(".header__sidebar");
+const sidebar_close_btn = document.getElementById("close-sidebar");
 
-/* -------------------------
-Functions
- ------------------------- */
+menu_btns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        sidebar.classList.add("active");
+    })
+})
+sidebar_close_btn.addEventListener("click", () => {
+    sidebar.classList.remove("active");
+});
 
+// -------------------------
+// Functions
+//-------------------------
 function timeOuts(){
     setTimeout(() => {
         const fade_imp = document.querySelectorAll(".fade-imp");
@@ -49,111 +63,108 @@ function autoPlay(){
         cur_index++;
     }, 10000);
 }
-/* -------------------------
-End Functions
- ------------------------- */
 
+// Function to get Remaining Time for Countdown Timer
+function getRemainingTime() {
+    const today = new Date().getTime();
+    const difference = future_date_in_ms - today;
+
+    // Time values in milliseconds
+    const one_day = 24 * 60 * 60 * 1000;
+    const one_hour = 60 * 60 * 1000;
+    const one_minute = 60 * 1000;
+
+    let days = Math.floor(difference / one_day);
+    let hours = Math.floor((difference % one_day) / one_hour);
+    let minutes = Math.floor((difference % one_hour) / one_minute);
+    let seconds = Math.floor((difference % one_minute) / 1000);
+    // console.log(days, hours, minutes, seconds);
+
+    const values = [days, hours, minutes, seconds];
+    countdown_items.forEach((item, index) => {
+        item.textContent = String(values[index]).padStart(2, "0");
+    });
+
+    if (difference < 0) {
+        clearInterval(countdown);
+        countdown_items.forEach((item) => {
+            item.textContent = "00";
+        });
+    }
+}
+// -------------------------
+// End Functions
+//-------------------------
+
+for (let i = 0; i < slide_nav_btns.length; ++i) {
+    slide_nav_btns[i].addEventListener("click", () => {
+        slide_nav_btns.forEach((item) => {
+            item.classList.remove("active");
+        });
+        slides.forEach((item) => {
+            item.classList.remove("active");
+            removeAllFades([item.querySelector(".hero__img-wrapper"), item.querySelector(".hero__top-text"), item.querySelector(".hero__bottom-text"), item.querySelector(".hero__extra-text")]);
+            item.querySelector(".hero__cta").classList.remove("fade", "fade-in-bottom");
+            const all_appear = item.querySelectorAll(".appear");
+            all_appear.forEach((item) => {
+                item.classList.remove("appear");
+            });
+        });
+
+        slide_nav_btns[i].classList.add("active");
+        slides[i].classList.add("active");
+        if (i === 1) {
+            // possible feature:  pick randomly
+            slides[i].querySelector(".hero__img-wrapper").classList.add("fade-imp", "fade-in-left-2");
+        } else if (i === 2) {
+            slides[i].querySelector(".hero__img-wrapper").classList.add("fade-imp", "fade-in-flat-top");
+        } else {
+            slides[i].querySelector(".hero__img-wrapper").classList.add("fade-imp", "fade-in-bottom");
+        }
+
+        // console.log(slides[i], slides[i].querySelector(".hero__img-wrapper").classList); - BUG: slides dont get animated when transitioning sometimes
+        let val = Math.floor(Math.random() * text_fade_styles.length);
+        let val2 = Math.floor(Math.random() * text_fade_styles.length);
+        let rand = text_fade_styles[val];
+        let rand2 = text_fade_styles[val2];
+        // console.log(val, val2, rand, rand2);
+        slides[i].querySelector(".hero__top-text").classList.add("fade", `${rand}`);
+        slides[i].querySelector(".hero__bottom-text").classList.add("fade", `${rand2}`);
+        slides[i].querySelector(".hero__extra-text").classList.add("fade", `${rand}`);
+        slides[i].querySelector(".hero__cta").classList.add("fade", "fade-in-bottom");
+
+        timeOuts();
+    });
+}
+
+top_feat_cats.forEach((item) => {
+    item.addEventListener("click", () => {
+        top_feat_cats.forEach((item) => {
+            item.classList.remove("top-featured__cat--active");
+        });
+        item.classList.add("top-featured__cat--active");
+        console.log("done");
+    });
+});
+
+const temp_date = new Date();
+const temp_year = temp_date.getFullYear();
+const temp_month = temp_date.getMonth();
+const temp_day = temp_date.getDate();
+const temp_hours = temp_date.getHours();
+const temp_mins = temp_date.getMinutes();
+const future_date = new Date(temp_year, temp_month, temp_day+3, temp_hours, temp_mins, 0);
+// console.log(future_date)
+
+// Convert future date to ms
+const future_date_in_ms = future_date.getTime();
+
+let countdown = setInterval(getRemainingTime, 1000);
+getRemainingTime(); // important to invoke function after setInterval in order to have access to the countdown variable
 
 // Execute when HTML is done loading
 window.addEventListener("load", () => {
     preloader.classList.add("disappear");
-
     timeOuts();
     setTimeout(autoPlay, 2000);
-
-    for (let i = 0; i < slide_nav_btns.length; ++i) {
-        slide_nav_btns[i].addEventListener("click", () => {
-            slide_nav_btns.forEach((item) => {
-                item.classList.remove("active");
-            });
-            slides.forEach((item) => {
-                item.classList.remove("active");
-                removeAllFades([item.querySelector(".hero__img-wrapper"), item.querySelector(".hero__top-text"), item.querySelector(".hero__bottom-text"), item.querySelector(".hero__extra-text")]);
-                item.querySelector(".hero__cta").classList.remove("fade", "fade-in-bottom");
-                const all_appear = item.querySelectorAll(".appear");
-                all_appear.forEach((item) => {
-                    item.classList.remove("appear");
-                });
-            });
-
-            slide_nav_btns[i].classList.add("active");
-            slides[i].classList.add("active");
-            if (i === 1) {
-                // possible feature:  pick randomly
-                slides[i].querySelector(".hero__img-wrapper").classList.add("fade-imp", "fade-in-left-2");
-            } else if (i === 2) {
-                slides[i].querySelector(".hero__img-wrapper").classList.add("fade-imp", "fade-in-flat-top");
-            } else {
-                slides[i].querySelector(".hero__img-wrapper").classList.add("fade-imp", "fade-in-bottom");
-            }
-
-            // console.log(slides[i], slides[i].querySelector(".hero__img-wrapper").classList); - BUG: slides dont get animated when transitioning sometimes
-            let val = Math.floor(Math.random() * text_fade_styles.length);
-            let val2 = Math.floor(Math.random() * text_fade_styles.length);
-            let rand = text_fade_styles[val];
-            let rand2 = text_fade_styles[val2];
-            // console.log(val, val2, rand, rand2);
-            slides[i].querySelector(".hero__top-text").classList.add("fade", `${rand}`);
-            slides[i].querySelector(".hero__bottom-text").classList.add("fade", `${rand2}`);
-            slides[i].querySelector(".hero__extra-text").classList.add("fade", `${rand}`);
-            slides[i].querySelector(".hero__cta").classList.add("fade", "fade-in-bottom");
-
-            timeOuts();
-        });
-    }
-
-    top_feat_cats.forEach((item) => {
-        item.addEventListener("click", () => {
-            top_feat_cats.forEach((item) => {
-                item.classList.remove("top-featured__cat--active");
-            });
-            item.classList.add("top-featured__cat--active");
-            console.log("done");
-        });
-    });
-
-    // Function to get Remaining Time for Countdown Timer
-    // Had to bring it in here because of scoping issues
-    function getRemainingTime() {
-        const today = new Date().getTime();
-        const difference = future_date_in_ms - today;
-
-        // Time values in milliseconds
-        const one_day = 24 * 60 * 60 * 1000;
-        const one_hour = 60 * 60 * 1000;
-        const one_minute = 60 * 1000;
-
-        let days = Math.floor(difference / one_day);
-        let hours = Math.floor((difference % one_day) / one_hour);
-        let minutes = Math.floor((difference % one_hour) / one_minute);
-        let seconds = Math.floor((difference % one_minute) / 1000);
-        // console.log(days, hours, minutes, seconds);
-
-        const values = [days, hours, minutes, seconds];
-        countdown_items.forEach((item, index) => {
-            item.textContent = String(values[index]).padStart(2, "0");
-        });
-
-        if (difference < 0) {
-            clearInterval(countdown);
-            countdown_items.forEach((item) => {
-                item.textContent = "00";
-            });
-        }
-    }
-
-    const temp_date = new Date();
-    const temp_year = temp_date.getFullYear();
-    const temp_month = temp_date.getMonth();
-    const temp_day = temp_date.getDate();
-    const temp_hours = temp_date.getHours();
-    const temp_mins = temp_date.getMinutes();
-    const future_date = new Date(temp_year, temp_month, temp_day+3, temp_hours, temp_mins, 0);
-    // console.log(future_date)
-
-    // Convert future date to ms
-    const future_date_in_ms = future_date.getTime();
-
-    let countdown = setInterval(getRemainingTime, 1000);
-    getRemainingTime(); // important to invoke function after setInterval in order to have access to the countdown variable
 });

@@ -12,11 +12,25 @@
         background: $clr-white;
         @include width-min(100%, rem(320));
         z-index: 999;
+        transform: translateX(-100%);
+        transition: transform .3s ease-out;
+
+        &.active {
+            transform: translateX(0);
+        }
+        &.active ~ .header__overlay {
+            opacity: 1;
+            z-index: 998;
+        }
 
         &-header {
             background: black;
             padding: 1rem;
-            height: 23%;
+            @include height-min(23%, rem(130));
+
+            @include mq(xsmall) {
+                height: rem(130);
+            }
         }
 
         &-logout {
@@ -68,14 +82,17 @@
 
         &-content {
             background: $clr-white;
-            height: 77%;
-            // height: 20rem;
+            @include height-min(77%, rem(513));
         }
 
         &-menu-header {
             display: flex;
-            height: 10%;
+            @include height-min(10%, rem(45));
             border-bottom: 1px solid rgba($clr-gray, .3);
+
+            @include mq(xsmall) {
+                height: rem(45);
+            }
         }
 
         &-menu-heading {
@@ -111,8 +128,12 @@
         }
 
         &-main-menu {
-            height: 90%; // not good practice...but necessary to have fixed height in order for overflow to be scrollable
+            @include height-min(90%, rem(462));
             overflow-y: auto;
+
+            @include mq(xsmall) {
+                height: calc(100vh - 175px);
+            }
 
             &-item {
                 padding: .7em 1em;
@@ -121,11 +142,27 @@
                 border-bottom: 1px solid rgba($clr-gray, 0.2);
                 cursor: pointer;
 
-                &:hover {
+                &:hover,
+                &:focus-within {
                     color: $clr-accent-hover;
                 }
+
                 .wrapper {
                     @include flex-sp-between;
+                }
+
+                &-btn {
+                    @include flex-center;
+                    padding: 0 .2rem;
+                }
+
+                &-btn:focus {
+                    outline: 2px dashed rgba($clr-gray, .5);
+                    // outline: 1px solid rgba($clr-accent-hover, .5);
+                }
+
+                &-btn:active {
+                    background: rgba($clr-accent-hover,.4);
                 }
             }
 
@@ -135,6 +172,10 @@
                 font-weight: 500;
             }
 
+            &-item:last-child {
+                border-bottom: none;
+            }
+
         }
     }
 
@@ -142,6 +183,8 @@
         position: fixed;
         inset: 0;
         background: rgba($clr-black, 0.6);
-        z-index: 998;
+        z-index: -998;
+        opacity: 0;
+        transition: opacity .3s ease-out;
     }
 }

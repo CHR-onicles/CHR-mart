@@ -103,7 +103,7 @@
                             <span>mart</span>
                         </li>
                         <li class="header__middle-nav-item">
-                            <button type="button">
+                            <button type="button" id="middle-nav-menu-btn">
                                 <svg class="header__middle-nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><title>Menu</title><line x1="80" y1="160" x2="432" y2="160" style="fill:none;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"/><line x1="80" y1="256" x2="432" y2="256" style="fill:none;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"/><line x1="80" y1="352" x2="432" y2="352" style="fill:none;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"/></svg>
                             </button>
                         </li>
@@ -178,7 +178,7 @@
                             </a>
                         </li>
                         <li class="header__bottom-nav-list-item">
-                            <a href="javascript:void(0)" class="header__bottom-nav-btn">
+                            <a href="javascript:void(0)" class="header__bottom-nav-btn" id="bottom-nav-menu-btn" aria-label="Menu">
                                 <svg class="header__bottom-nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><title>Menu</title><line x1="80" y1="160" x2="432" y2="160" style="fill:none;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"/><line x1="80" y1="256" x2="432" y2="256" style="fill:none;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"/><line x1="80" y1="352" x2="432" y2="352" style="fill:none;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"/></svg>
                                 <span class="header__bottom-nav-menu-name">Menu</span>
                             </a>
@@ -201,7 +201,7 @@
             <!-- End Bottom nav -->
 
             <!-- Sidebar -->
-            <aside class="header__sidebar">
+            <aside class="header__sidebar active">
                 <div class="header__sidebar-header">
                     <a class="header__sidebar-logout" href="#">
                         <svg class="header__sidebar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>Logout</title><polyline points="249.38 336 170 256 249.38 176" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/><line x1="181.03" y1="256" x2="342" y2="256" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/><path d="M448,256c0-106-86-192-192-192S64,150,64,256s86,192,192,192S448,362,448,256Z" style="fill:none;stroke-miterlimit:10;stroke-width:32px"/></svg>
@@ -222,7 +222,7 @@
                             <svg class="header__sidebar-menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>Back</title><polyline points="328 112 184 256 328 400" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/></svg>
                         </button>
                         <span class="header__sidebar-menu-heading">main menu</span>
-                        <button class="header__sidebar-menu-btn">
+                        <button class="header__sidebar-menu-btn" id="close-sidebar">
                             <svg class="header__sidebar-menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>Close</title><line x1="368" y1="368" x2="144" y2="144" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/><line x1="368" y1="144" x2="144" y2="368" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/></svg>
                         </button>
                     </div>
@@ -240,35 +240,40 @@
                         <li class="header__sidebar-main-menu-item">
                             <div class="wrapper">
                                 <span>Camera & Accessories</span>
-                                <svg class="header__sidebar-icon--black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><polyline points="184 112 328 256 184 400" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/></svg>
+                                <button class="header__sidebar-main-menu-item-btn">
+                                    <svg class="header__sidebar-icon--black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><polyline points="184 112 328 256 184 400" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/></svg>
+                                </button>
                             </div>
                         </li>
                         <li class="header__sidebar-main-menu-item">
                             <div class="wrapper">
                                 <span>Tablets & Mobile Phones</span>
-                                <svg class="header__sidebar-icon--black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><polyline points="184 112 328 256 184 400" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/></svg>
+                                <button class="header__sidebar-main-menu-item-btn">
+                                    <svg class="header__sidebar-icon--black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><polyline points="184 112 328 256 184 400" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/></svg>
+                                </button>
                             </div>
                         </li>
                         <li class="header__sidebar-main-menu-item">
                             <div class="wrapper">
                                 <span>Laptops & Computers</span>
-                                <svg class="header__sidebar-icon--black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><polyline points="184 112 328 256 184 400" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/></svg>
+                                <button class="header__sidebar-main-menu-item-btn">
+                                    <svg class="header__sidebar-icon--black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><polyline points="184 112 328 256 184 400" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/></svg>
+                                </button>
                             </div>
                         </li>
                         <li class="header__sidebar-main-menu-item">
                             <div class="wrapper">
                                 <span>Audio & Headphones</span>
-                                <svg class="header__sidebar-icon--black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><polyline points="184 112 328 256 184 400" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/></svg>
+                                <button class="header__sidebar-main-menu-item-btn">
+                                    <svg class="header__sidebar-icon--black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><polyline points="184 112 328 256 184 400" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/></svg>
+                                </button>
                             </div>
                         </li>
                         <li class="header__sidebar-main-menu-item">
                             <span>Fashion & Clothing</span>
                         </li>
                         <li class="header__sidebar-main-menu-item">
-                            <div class="wrapper">
-                                <span>Tools & Equipment</span>
-                                <svg class="header__sidebar-icon--black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><polyline points="184 112 328 256 184 400" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"/></svg>
-                            </div>
+                            <span>Tools & Equipment</span>
                         </li>
                         <li class="header__sidebar-main-menu-item">
                             <span>Toys & Hobbies</span>
