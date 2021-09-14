@@ -4,6 +4,7 @@
 
 .header {
     &__sidebar {
+        // display: none;
         position: fixed;
         top: 0;
         bottom: 0;
@@ -94,6 +95,7 @@
             flex-basis: 10%;
             padding: .6rem .8rem;
             border: 1px solid;
+            cursor: pointer;
         }
 
         &-menu-btn:nth-child(1) {
@@ -117,7 +119,11 @@
                 color: black;
                 font-size: rem(14);
                 border-bottom: 1px solid rgba($clr-gray, 0.2);
+                cursor: pointer;
 
+                &:hover {
+                    color: $clr-accent-hover;
+                }
                 .wrapper {
                     @include flex-sp-between;
                 }
