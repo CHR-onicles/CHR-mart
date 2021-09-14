@@ -17,6 +17,30 @@
     border-radius: $border-radius-2;
 }
 
+.nav-btns {
+    @include flex-sp-between;
+    position: absolute;
+    @include left-50;
+    bottom: 5%;
+    width: rem(60);
+    z-index: 99;
+
+    span {
+        @include size(rem(6));
+        border-radius: 50%;
+        background: rgba($clr-white, 0.4);
+        cursor: pointer;
+        transition: all 0.4s;
+
+        &.active {
+            width: rem(35);
+            border-radius: rem(15);
+            background: $clr-white;
+        }
+    }
+}
+
+
 .hero__cta {
     @extend %button;
 
