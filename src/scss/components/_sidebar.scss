@@ -1,0 +1,141 @@
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/colors' as *;
+
+.header {
+    &__sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        background: $clr-white;
+        @include width-min(100%, rem(320));
+        z-index: 999;
+
+        &-header {
+            background: black;
+            padding: 1rem;
+            height: 23%;
+        }
+
+        &-logout {
+            display: flex;
+            align-items: center;
+            gap: .2em;
+            width: max-content;
+            float: right;
+            color: $clr-white;
+            font-size: rem(13);
+            // outline: 1px solid red;
+        }
+
+        &-icon {
+            stroke: $clr-white;
+            width: rem(18);
+        }
+
+        &-icon--black {
+            stroke: $clr-black;
+            width: rem(15);
+        }
+
+        &-user {
+            color: $clr-white;
+            // margin-top: 1rem;
+
+            &-avatar {
+                @include size(rem(60));
+                border-radius: 50%;
+                overflow: hidden;
+            }
+
+            &-name {
+                font-size: rem(14);
+                margin-top: .4em;
+            }
+
+            &-email {
+                font-size: rem(13);
+                color: mix(white, $clr-gray, 50%);
+            }
+
+            &-name,
+            &-email {
+                padding-left: .5rem;
+            }
+        }
+
+        &-content {
+            background: $clr-white;
+            height: 77%;
+            // height: 20rem;
+        }
+
+        &-menu-header {
+            display: flex;
+            height: 10%;
+            border-bottom: 1px solid rgba($clr-gray, .3);
+        }
+
+        &-menu-heading {
+            flex-basis: 80%;
+            align-self: center;
+            justify-self: center;
+            color: black;
+            font-size: rem(14);
+            font-weight: 500;
+            text-align: center;
+            text-transform: uppercase;
+            // outline: 1px solid blue;
+        }
+        
+        &-menu-btn {
+            height: 100%;
+            flex-basis: 10%;
+            padding: .6rem .8rem;
+            border: 1px solid;
+        }
+
+        &-menu-btn:nth-child(1) {
+            border-color: transparent rgba($clr-gray, .2) transparent transparent;
+        }
+        &-menu-btn:nth-child(3) {
+            border-color: transparent transparent transparent rgba($clr-gray, .2);
+        }
+
+        &-menu-icon {
+            width: rem(24);
+            stroke: $clr-black;
+        }
+
+        &-main-menu {
+            height: 90%; // not good practice...but necessary to have fixed height in order for overflow to be scrollable
+            overflow-y: auto;
+
+            &-item {
+                padding: .7em 1em;
+                color: black;
+                font-size: rem(14);
+                border-bottom: 1px solid rgba($clr-gray, 0.2);
+
+                .wrapper {
+                    @include flex-sp-between;
+                }
+            }
+
+            &-item:nth-child(1),
+            &-item:nth-child(2),
+            &-item:nth-child(3) {
+                font-weight: 500;
+            }
+
+        }
+    }
+
+    &__overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba($clr-black, 0.6);
+        z-index: 998;
+    }
+}

@@ -127,7 +127,7 @@ window.addEventListener("load", () => {
         let hours = Math.floor((difference % one_day) / one_hour);
         let minutes = Math.floor((difference % one_hour) / one_minute);
         let seconds = Math.floor((difference % one_minute) / 1000);
-        console.log(days, hours, minutes, seconds);
+        // console.log(days, hours, minutes, seconds);
 
         const values = [days, hours, minutes, seconds];
         countdown_items.forEach((item, index) => {

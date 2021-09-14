@@ -3,11 +3,11 @@ body{
 }
 
 // Sass functions don't  work here
-::-webkit-scrollbar {
+body::-webkit-scrollbar {
     width: 15px;
 }
 
-::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
     background: rgba(black, 0.5);
     border: 4px solid transparent;
     background-clip: content-box;
