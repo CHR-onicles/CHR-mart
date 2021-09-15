@@ -80,6 +80,7 @@
         &-content {
             background: $clr-white;
             height: calc(100vh - 146px);
+            overflow: hidden;
         }
 
         &-menu-header {
@@ -120,14 +121,20 @@
             stroke: $clr-black;
         }
 
-        &-main-menu {
-            display: none;
-            height:  rem(462);
+        &-main-menu,
+        &-main-menu--alt {
+            height: 0;
             overflow-y: auto;
-
-            @include mq(xsmall) {
+            transition: transform .2s ease-out;
+            
+            &.active {
+                transform: translateX(0);
                 height: calc(100vh - 175px); // can't use rem function here
             }
+        }
+
+        &-main-menu {
+            transform: translateX(-100%);
 
             &-item {
                 padding: .7em 1em;
@@ -173,12 +180,7 @@
         }
 
         &-main-menu--alt {
-            height: calc(100vh - 175px);
-            overflow-y: auto;
-
-            @include mq(xsmall) {
-                // height: calc(100vh - 175px); // can't use rem function here
-            }
+            transform: translateX(100%);
         
             &-item {
                 padding: .7em 1em;

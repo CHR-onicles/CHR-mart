@@ -15,17 +15,52 @@ const menu_btns = [
 ];
 const sidebar = document.querySelector(".header__sidebar");
 const sidebar_close_btn = document.getElementById("close-sidebar");
-const menu_heading = document.getElementById("main-menu");
+const sidebar_back_btn = document.getElementById("back-sidebar");
+const main_menu = document.getElementById("main-menu");
+const menu_heading = document.querySelector(".header__sidebar-menu-heading");
+const camera_cat_menu = document.getElementById("camera-cat-menu");
+const tablet_cat_menu = document.getElementById("tablet-cat-menu");
+const laptop_cat_menu = document.getElementById("laptop-cat-menu");
+const camera_cat_btn = document.getElementById("camera-cat-btn");
+const tablet_cat_btn = document.getElementById("tablet-cat-btn");
+const laptop_cat_btn = document.getElementById("laptop-cat-btn");
 
+
+camera_cat_btn.addEventListener("click", () => {
+    camera_cat_menu.classList.add("active");
+    main_menu.classList.remove("active");
+    menu_heading.textContent = camera_cat_btn.previousElementSibling.textContent;
+});
+
+tablet_cat_btn.addEventListener("click", () => {
+    tablet_cat_menu.classList.add("active");
+    main_menu.classList.remove("active");
+    menu_heading.textContent = tablet_cat_btn.previousElementSibling.textContent;
+});
+
+laptop_cat_btn.addEventListener("click", () => {
+    laptop_cat_menu.classList.add("active");
+    main_menu.classList.remove("active");
+    menu_heading.textContent = laptop_cat_btn.previousElementSibling.textContent;
+});
 
 menu_btns.forEach((btn) => {
     btn.addEventListener("click", () => {
         sidebar.classList.add("active");
-    })
-})
+    });
+});
+
 sidebar_close_btn.addEventListener("click", () => {
     sidebar.classList.remove("active");
 });
+
+sidebar_back_btn.addEventListener("click", () => {
+    [tablet_cat_menu, camera_cat_menu, laptop_cat_menu].forEach((item) => {
+        item.classList.remove("active");
+    });
+    main_menu.classList.add("active");
+    menu_heading.textContent = "main menu";
+})
 
 // -------------------------
 // Functions
