@@ -29,29 +29,34 @@ const laptop_cat_btn = document.getElementById("laptop-cat-btn");
 camera_cat_btn.addEventListener("click", () => {
     camera_cat_menu.classList.add("active");
     main_menu.classList.remove("active");
+    sidebar_back_btn.classList.add("active");
     menu_heading.textContent = camera_cat_btn.previousElementSibling.textContent;
 });
 
 tablet_cat_btn.addEventListener("click", () => {
     tablet_cat_menu.classList.add("active");
     main_menu.classList.remove("active");
+    sidebar_back_btn.classList.add("active");
     menu_heading.textContent = tablet_cat_btn.previousElementSibling.textContent;
 });
 
 laptop_cat_btn.addEventListener("click", () => {
     laptop_cat_menu.classList.add("active");
     main_menu.classList.remove("active");
+    sidebar_back_btn.classList.add("active");
     menu_heading.textContent = laptop_cat_btn.previousElementSibling.textContent;
 });
 
 menu_btns.forEach((btn) => {
     btn.addEventListener("click", () => {
         sidebar.classList.add("active");
+        sidebar.setAttribute("aria-expanded", "true");
     });
 });
 
 sidebar_close_btn.addEventListener("click", () => {
     sidebar.classList.remove("active");
+    sidebar.setAttribute("aria-expanded", "false");
 });
 
 sidebar_back_btn.addEventListener("click", () => {
@@ -59,6 +64,7 @@ sidebar_back_btn.addEventListener("click", () => {
         item.classList.remove("active");
     });
     main_menu.classList.add("active");
+    sidebar_back_btn.classList.remove("active");
     menu_heading.textContent = "main menu";
 })
 

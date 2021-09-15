@@ -127,7 +127,8 @@
     }
 
     .privacy-policy {
-        span {
+        a {
+            color: inherit;
             text-decoration: underline;
             font-style: italic;
         }

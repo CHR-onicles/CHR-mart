@@ -89,7 +89,7 @@
     font-size: rem(14);
     background: rgba($clr-white, 0.2);
 
-     &:hover {
+    &:hover {
         color: $clr-white;
         background: none;
     }
@@ -218,5 +218,30 @@
         @include mq(medium) {
             left: -2.5%;
         }
+    }
+}
+
+.header__sidebar {
+    &-menu-btn {
+        height: 100%;
+        flex-basis: 10%;
+        padding: 0.6rem 0.8rem;
+        border: 1px solid;
+        cursor: pointer;
+    }
+
+    &-menu-btn:nth-child(1) {
+        opacity: 0;
+        pointer-events: none;
+        border-color: transparent rgba($clr-gray, 0.2) transparent transparent;
+
+        &.active {
+            pointer-events: all;
+            opacity: 1;
+        }
+    }
+
+    &-menu-btn:nth-child(3) {
+        border-color: transparent transparent transparent rgba($clr-gray, 0.2);
     }
 }

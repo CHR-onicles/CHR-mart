@@ -101,21 +101,6 @@
             // outline: 1px solid blue;
         }
         
-        &-menu-btn {
-            height: 100%;
-            flex-basis: 10%;
-            padding: .6rem .8rem;
-            border: 1px solid;
-            cursor: pointer;
-        }
-
-        &-menu-btn:nth-child(1) {
-            border-color: transparent rgba($clr-gray, .2) transparent transparent;
-        }
-        &-menu-btn:nth-child(3) {
-            border-color: transparent transparent transparent rgba($clr-gray, .2);
-        }
-
         &-menu-icon {
             width: rem(24);
             stroke: $clr-black;
@@ -155,11 +140,7 @@
                 &-btn {
                     @include flex-center;
                     padding: 0 .2rem;
-                }
-
-                &-btn:focus {
-                    outline: 2px dashed rgba($clr-gray, .5);
-                    // outline: 1px solid rgba($clr-accent-hover, .5);
+                    cursor: pointer;
                 }
 
                 &-btn:active {
