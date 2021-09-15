@@ -40,7 +40,6 @@
     }
 }
 
-
 .hero__cta {
     @extend %button;
 
@@ -66,7 +65,8 @@
     }
 }
 
-.hero__f-card-cta {
+.hero__f-card-cta,
+.hero__f-card-cta--sidebar {
     @extend %button;
 
     position: absolute;
@@ -81,6 +81,17 @@
     &:hover {
         background: $clr-white;
         color: $clr-black;
+    }
+}
+
+.hero__f-card-cta--sidebar {
+    bottom: 15%;
+    font-size: rem(14);
+    background: rgba($clr-white, 0.2);
+
+     &:hover {
+        color: $clr-white;
+        background: none;
     }
 }
 
@@ -162,13 +173,12 @@
 .top-selling__product-cards,
 .recommended__cards,
 .brands__cards {
-    
     @media (hover) {
-        .owl-next, 
+        .owl-next,
         .owl-prev {
             opacity: 0 !important;
-            transition: opacity .3s;
-        } 
+            transition: opacity 0.3s;
+        }
 
         &:hover {
             .owl-next,
@@ -196,7 +206,7 @@
 
     .owl-prev {
         left: -6%;
-        
+
         @include mq(xsmall) {
             left: -5%;
         }

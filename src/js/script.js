@@ -15,6 +15,8 @@ const menu_btns = [
 ];
 const sidebar = document.querySelector(".header__sidebar");
 const sidebar_close_btn = document.getElementById("close-sidebar");
+const menu_heading = document.getElementById("main-menu");
+
 
 menu_btns.forEach((btn) => {
     btn.addEventListener("click", () => {

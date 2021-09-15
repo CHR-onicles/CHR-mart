@@ -1,10 +1,10 @@
 @use '../abstracts/functions' as *;
 @use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
 @use '../base/colors' as *;
 
 .header {
     &__sidebar {
-        // display: none;
         position: fixed;
         top: 0;
         bottom: 0;
@@ -21,6 +21,7 @@
         &.active ~ .header__overlay {
             opacity: 1;
             z-index: 998;
+            transition: opacity .3s ease-out;
         }
 
         &-header {
@@ -128,11 +129,12 @@
         }
 
         &-main-menu {
+            display: none;
             @include height-min(90%, rem(462));
             overflow-y: auto;
 
             @include mq(xsmall) {
-                height: calc(100vh - 175px);
+                height: calc(100vh - 175px); // can't use rem function here
             }
 
             &-item {
@@ -177,6 +179,78 @@
             }
 
         }
+
+        &-main-menu--alt {
+            @include height-min(90%, rem(462));
+            overflow-y: auto;
+
+            @include mq(xsmall) {
+                height: calc(100vh - 175px); // can't use rem function here
+            }
+        
+            &-item {
+                padding: .7em 1em;
+                color: black;
+                font-size: rem(14);
+                cursor: pointer;
+
+                .heading {
+                    display: inline-block;
+                    font-size: rem(15);
+                    font-weight: 500;
+                    padding-bottom: .3em;
+                }
+
+                .sub-list {
+                    li {
+                        width: max-content;
+                        @include hover-right-shift;
+                        padding: .25em 0;
+                    }
+                }
+            }
+
+            &-item:nth-child(1) {
+                margin-top: 1rem;
+            }
+
+            &-item:last-child {
+                margin-top: 1rem;
+                padding-top: 0;
+                padding-bottom: 2rem;
+                position: relative;
+
+                .img-wrapper {
+                    position: relative;
+                    width: 100%;
+                    height: rem(420);
+                    overflow: hidden;
+                    border-radius: $border-radius-2;
+                }
+
+                .text-content {
+                    position: absolute;
+                    top: 10%;
+                    @include left-50;
+                    width: 100%;
+                    text-align: center;
+                    font-size: rem(18);
+                    color: $clr-white;
+                    z-index: 1;
+
+                    p:nth-child(2) {
+                        font-size: rem(48);
+                        color: $clr-accent;
+                    }
+
+                    span {
+                        color: $clr-accent;
+                    }
+
+                }
+            }
+
+        }
     }
 
     &__overlay {
@@ -185,6 +259,5 @@
         background: rgba($clr-black, 0.6);
         z-index: -998;
         opacity: 0;
-        transition: opacity .3s ease-out;
     }
 }
