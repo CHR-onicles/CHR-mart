@@ -27,11 +27,7 @@
         &-header {
             background: black;
             padding: 1rem;
-            @include height-min(23%, rem(130));
-
-            @include mq(xsmall) {
-                height: rem(130);
-            }
+            height: rem(130);
         }
 
         &-logout {
@@ -83,17 +79,13 @@
 
         &-content {
             background: $clr-white;
-            @include height-min(77%, rem(513));
+            height: calc(100vh - 146px);
         }
 
         &-menu-header {
             display: flex;
-            @include height-min(10%, rem(45));
+            height: rem(45);
             border-bottom: 1px solid rgba($clr-gray, .3);
-
-            @include mq(xsmall) {
-                height: rem(45);
-            }
         }
 
         &-menu-heading {
@@ -130,7 +122,7 @@
 
         &-main-menu {
             display: none;
-            @include height-min(90%, rem(462));
+            height:  rem(462);
             overflow-y: auto;
 
             @include mq(xsmall) {
@@ -181,11 +173,11 @@
         }
 
         &-main-menu--alt {
-            @include height-min(90%, rem(462));
+            height: calc(100vh - 175px);
             overflow-y: auto;
 
             @include mq(xsmall) {
-                height: calc(100vh - 175px); // can't use rem function here
+                // height: calc(100vh - 175px); // can't use rem function here
             }
         
             &-item {
