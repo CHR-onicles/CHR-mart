@@ -173,7 +173,7 @@
 .top-selling__product-cards,
 .recommended__cards,
 .brands__cards {
-    @media (hover) {
+    @media (hover: hover) {
         .owl-next,
         .owl-prev {
             opacity: 0 !important;
