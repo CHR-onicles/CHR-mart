@@ -1,2 +1,2 @@
 # CHR-mart
- Gaming store landing page
+ E-commerce site landing page
