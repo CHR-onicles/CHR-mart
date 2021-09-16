@@ -18,10 +18,10 @@ This is an E-commerce site Landing Page inspired by posts on Pinterest.
 
 ### Demo
 
-#### Mobile
+#### Mobile 📱
 <img src="./demo/CHR-mart_mobile_demo.gif" width=375 alt="Mobile view demo">
 
-#### Desktop
+#### Desktop 🖥
 <img src="./demo/CHR-mart_desktop_demo.gif" width=800 height=500 alt="Desktop view demo">
 
 
