@@ -5,6 +5,7 @@
 *.scss.map
 node_modules
 todo.md
+*.mp4
 
 dist/
 dist/*
