@@ -47,6 +47,7 @@
     padding: 1em 3em;
     margin-top: 2em; /*TODO: increase based on device width */
     background: $clr-accent;
+    overflow: hidden;
 
     // used a pseudo element for hover event because transition
     // will be overridden by a utility class that will be added later
